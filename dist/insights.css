@@ -64,5 +64,31 @@
 .answer-card{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-top:1px solid #e0e5e2}.answer-card h3{font:600 13px 'Manrope';color:#405957;margin:6px 0 3px}.answer-card p,.answer-card small{color:#7a8983;font-size:9px}.answer-card>a{align-self:center;white-space:nowrap;font-size:9px}
 .export-section{display:flex;align-items:center;justify-content:space-between;gap:22px;margin-top:16px}.export-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:end}.export-actions .secondary{padding:10px 12px;border:1px solid #ccd7d0;border-radius:7px;background:#eef2ed;color:#4e6964;font-size:10px}.export-actions .secondary:hover{background:#e2eae4}
 .loading-insight,.empty-insight{color:#71807b;font-size:11px;padding:18px 0}
+.mission-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:18px;margin-top:20px}
+.mission-card{background:#ffffff;border:1px solid #dce3de;border-radius:12px;padding:22px;box-shadow:0 4px 16px rgba(30,36,33,0.06);display:flex;flex-direction:column;transition:transform 160ms ease,box-shadow 160ms ease}
+.mission-card:hover{box-shadow:0 8px 24px rgba(30,36,33,0.1);transform:translateY(-2px)}
+.mission-card.high{border-left:4px solid #214e3c}
+.mission-card.medium{border-left:4px solid #a66e28}
+.mission-card.low{border-left:4px solid #94a3b8}
+.card-kicker-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.proximity-badge{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:4px 8px;border-radius:4px}
+.proximity-badge.level-3{background:rgba(33,78,60,.1);color:#214e3c;border:1px solid rgba(33,78,60,.25)}
+.proximity-badge.level-2{background:rgba(166,110,40,.1);color:#a66e28;border:1px solid rgba(166,110,40,.25)}
+.proximity-badge.level-1{background:#f1f5f9;color:#475569;border:1px solid #cbd5e1}
+.study-family{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#718084}
+.mission-card h3{font-family:var(--font-display,'Space Grotesk',sans-serif);font-size:18px;font-weight:700;color:#1e2421;margin:0 0 8px}
+.study-objective{font-size:13px;line-height:1.6;color:#525b56;margin:0 0 14px;flex:1}
+.fit-reason{font-size:12px;line-height:1.5;color:#525b56;background:#f7f6f2;padding:10px 12px;border-radius:6px;margin-bottom:14px;border:1px solid #e5e2dc}
+.fit-reason strong{color:#1e2421}
+.study-meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;margin-bottom:16px;padding:12px;background:#f7f6f2;border-radius:8px;border:1px solid #e5e2dc}
+.study-meta-grid>div{display:flex;flex-direction:column;gap:2px}
+.study-meta-grid span{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:9px;text-transform:uppercase;letter-spacing:.8px;color:#718084}
+.study-meta-grid strong{font-size:11px;font-weight:600;color:#1e2421;word-break:break-word}
+.card-bottom-actions{display:flex;gap:8px;margin-top:auto;flex-wrap:wrap}
+.card-bottom-actions button{font-size:11px;padding:8px 14px;border-radius:6px;cursor:pointer}
+.card-bottom-actions .primary{background:#214e3c;color:#ffffff;border:none;font-weight:600}
+.card-bottom-actions .primary:hover{background:#17382b}
+.card-bottom-actions .secondary{background:#ffffff;color:#1e2421;border:1px solid #dce3de;font-weight:500}
+.card-bottom-actions .secondary:hover{background:#f1f5f9;border-color:#cbd5e1}
 @media(max-width:900px){.insights-hero,.insights-grid,.assistant-section,.pathway-section,.transfer-section{grid-template-columns:1fr}.insight-kpis{grid-template-columns:repeat(2,1fr)}.export-section{align-items:flex-start;flex-direction:column}.export-actions{justify-content:start}}
 @media(max-width:560px){.insights-shell{width:calc(100% - 24px);padding:28px 0 52px}.insights-top{height:58px;padding:0 14px}.insights-hero{gap:24px}.insights-hero h1{font-size:37px;letter-spacing:-1.5px}.mission-context{grid-template-columns:1fr;gap:10px}.insight-kpis{grid-template-columns:1fr 1fr}.insight-kpis article{padding:14px}.insight-kpis strong{font-size:25px}.insight-section{padding:18px}.question-box{flex-direction:column}.rank-title{align-items:flex-start;flex-direction:column;gap:3px}.pathway-section>div:last-child,.transfer-cards{grid-template-columns:1fr}.evidence-table>div{grid-template-columns:1fr}.evidence-table small{grid-column:auto}}

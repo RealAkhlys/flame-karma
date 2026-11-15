@@ -1,4 +1,4 @@
-# Orbital Telemetry & Research — Flame in Freefall
+# KARMA — Flame in Freefall
 > **NASA Space Apps Challenge 2026:** *"Flame in Freefall: AI-Powered Fire Safety Insights from Microgravity Combustion Data"*
 
 An aerospace-grade dual-experience platform merging **cinematic visual storytelling** with an **interactive microgravity combustion engineering workbench** and **3D ISS Destiny laboratory exploration**. Grounded in NASA's Physical Sciences Informatics (PSI) repository (`psi.nasa.gov`) and NASA Technical Reports Server (NTRS).

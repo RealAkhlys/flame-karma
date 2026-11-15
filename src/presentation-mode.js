@@ -14,7 +14,7 @@ export function createPresentationMode({ onClose, onSwitchTab }) {
       title: 'Flame in Freefall: AI-Powered Spacecraft Fire Safety',
       subtitle: 'Transforming 12 Terabytes of Microgravity Combustion Science into Actionable Artemis Mission Safety',
       badge: 'EXECUTIVE OVERVIEW',
-      speakerNotes: '🎤 Presenter Cue: Open with the core hook—fire in space behaves completely opposite to our terrestrial intuition. We built both a cinematic storytelling experience and an aerospace engineering workbench grounded in 24 NASA PSI investigations.',
+      speakerNotes: '🎤 Sunucu İpuçları: • Açılış vurgusu: Uzayda yangın, Dünya\'daki sezgilerimizin tam aksine davranır. • Doğal taşınım (buoyancy) sıfırlandığı için alev gözle görülemeyen difüzyon kürelerine dönüşür. • Platformumuz, hem sinematik bilimsel anlatı hem de 24 NASA PSI uçuş araştırmasına dayalı havacılık mühendisliği çalışma alanı sunar.',
       content: `
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px;">
           <div style="background: #FFFFFF; border: 1px solid var(--space-border); border-radius: 12px; padding: 24px; text-align: left; box-shadow: var(--space-shadow);">
@@ -48,7 +48,7 @@ export function createPresentationMode({ onClose, onSwitchTab }) {
       title: 'The Physics Shift: From Teardrop to Blue Sphere',
       subtitle: 'The Collapse of Buoyancy and the Emergence of Pure Molecular Diffusion',
       badge: 'FUNDAMENTAL COMBUSTION PHYSICS',
-      speakerNotes: '🎤 Presenter Cue: Point out that without gravity (g=0), buoyant convection is eliminated. The flame becomes a soot-free spherical blue halo. Emphasize that standard smoke detectors fail because microgravity flames produce virtually zero smoke plumes.',
+      speakerNotes: '🎤 Sunucu İpuçları: • Yerçekimi sıfırlandığında (g ≈ 0) kaldırma kuvveti ve sıcak gaz yükselmesi tamamen yok olur. • Alev, issiz ve neredeyse görünmez mavi bir difüzyon küresine dönüşür. • Standart optik duman dedektörleri, duman sütunu yükselmediği için uzay yangınlarında alarm veremez.',
       content: `
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 30px; text-align: left;">
           <div style="background: #FFFFFF; border: 1px solid var(--space-border); border-left: 3px solid var(--telemetry-amber); border-radius: 12px; padding: 24px; box-shadow: var(--space-shadow);">
@@ -78,7 +78,7 @@ export function createPresentationMode({ onClose, onSwitchTab }) {
       title: 'The Lunar Habitat Paradox & Flammability Cliff',
       subtitle: 'Why Artemis Habitats (56 kPa, 34% O₂) Turn Spacecraft Materials Hyper-Flammable',
       badge: 'MISSION ARCHITECTURE HAZARD',
-      speakerNotes: '🎤 Presenter Cue: This is a major design paradox. To prevent decompression sickness during moonwalks, the Artemis cabin operates at 34% O2 and 56 kPa. But our data reveals this drops the Limiting Oxygen Concentration, causing Nomex and acrylic to burn up to 4x faster!',
+      speakerNotes: '🎤 Sunucu İpuçları: • Artemis paradoksu: Ay yürüyüşlerinde vurgun (dekompresyon) riskini ve 4 saatlik ön-soluma süresini 20 dakikaya indirmek için kabin %34 O₂ ve 56 kPa basınca ayarlanır. • Alevlenme Uçurumu: Yüksek oksijen ortamında Sınır Oksijen Konsantrasyonu (LOC) düşer; ISS\'te tutuşmayan Nomex ve akrilik Ay habitatında 4 kata kadar daha hızlı yanar!',
       content: `
         <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 30px; margin-top: 30px; text-align: left;">
           <div style="background: #FFFFFF; border: 1px solid var(--space-border); border-radius: 12px; padding: 24px; box-shadow: var(--space-shadow);">
@@ -114,7 +114,7 @@ export function createPresentationMode({ onClose, onSwitchTab }) {
       title: 'Interactive Flame Lab & PSI Mission Ranker',
       subtitle: 'Zero-Hallucination Physics Modeling with Strict Evidence Boundaries',
       badge: 'AEROSPACE WORKBENCH',
-      speakerNotes: '🎤 Presenter Cue: Highlight our zero-hallucination philosophy. When users test regimes outside NASA experimental flight data (e.g. 0.16g with 35% O2 and high draft), our platform triggers an explicit "Evidence Gap Alert" proposing the exact test matrix for the next NASA mission.',
+      speakerNotes: '🎤 Sunucu İpuçları: • Sıfır-halüsinasyon felsefesi: NASA deneysel uçuş verisi sınırlarının dışına çıkıldığında (ör. 0.16g, %35 O₂, yüksek rüzgar) sistem "Kanıt Boşluğu Uyarısı" (Evidence Gap Alert) üretir. • Tahmin yerine, bir sonraki NASA uçuş görevi (SoFIE-II) için doğrudan test parametreleri önerilir.',
       content: `
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; text-align: left;">
           <div style="background: #FFFFFF; border: 1px solid var(--space-border); border-top: 3px solid var(--telemetry-cyan); border-radius: 12px; padding: 22px; box-shadow: var(--space-shadow);">
@@ -151,7 +151,7 @@ export function createPresentationMode({ onClose, onSwitchTab }) {
       title: 'AI Safety Protocols & Terrestrial Spin-Offs',
       subtitle: 'From ISS Flight Rule 7.4.2 to Server Rooms, Hydrogen Stations, and Firefighter Gear',
       badge: 'MISSION TO EARTH',
-      speakerNotes: '🎤 Presenter Cue: Close strong on operational utility. Show the Astronaut Emergency Action Card—step 1 is always HVAC shutdown to starve the flame. Finally, show how NASA microgravity research protects Earth: fine water-mist for server rooms and optical detectors for clean hydrogen plants.',
+      speakerNotes: '🎤 Sunucu İpuçları: • Operasyonel kapanış: Astronot Acil Durum Kartı\'nı gösterin — 1. adım her zaman HVAC havalandırmasını derhal kapatıp alevi kendi CO₂ kabuğunda boğmaktır. • Dünyaya kazanımlar: Veri merkezleri için ince su sisi (%80 daha az su tüketimi) ve hidrojen tesisleri için görünmez alev sensörleri.',
       content: `
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 30px; text-align: left;">
           <div style="background: #FFFFFF; border: 1px solid var(--space-border); border-left: 3px solid #B91C1C; border-radius: 12px; padding: 24px; box-shadow: var(--space-shadow);">

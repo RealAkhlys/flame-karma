@@ -227,6 +227,21 @@ dialog#research-dialog {
   margin: 0 !important;
 }
 
+#active-module-view > * {
+  animation: fadeSlideIn 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 #active-module-view[hidden] {
   display: none !important;
 }
@@ -248,7 +263,7 @@ body.module-active #explore-hint {
   border-radius: 6px;
   padding: 6px 14px;
   height: auto;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .telemetry-dark .mode-nav button:hover {
@@ -279,7 +294,7 @@ body.module-active #explore-hint {
   padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
   letter-spacing: 0.8px;
 }
 
@@ -295,14 +310,7 @@ body.module-active #explore-hint {
   height: 6px;
   background: var(--telemetry-amber);
   border-radius: 50%;
-  box-shadow: 0 0 4px var(--telemetry-amber);
-  animation: pulse-ring 2s infinite;
-}
-
-@keyframes pulse-ring {
-  0% { transform: scale(0.95); opacity: 0.8; }
-  50% { transform: scale(1.2); opacity: 1; }
-  100% { transform: scale(0.95); opacity: 0.8; }
+  box-shadow: 0 0 3px rgba(166, 110, 40, 0.3);
 }
 
 /* Telemetry Badges & Monospace Tags */
@@ -335,7 +343,6 @@ body.module-active #explore-hint {
   background: #FDF2F2;
   color: #B91C1C;
   border: 1px solid rgba(185, 28, 28, 0.25);
-  animation: badge-warn 2.5s infinite;
 }
 
 .telemetry-badge.badge-match {
@@ -344,24 +351,49 @@ body.module-active #explore-hint {
   border: 1px solid rgba(33, 78, 60, 0.25);
 }
 
-@keyframes badge-warn {
-  0%, 100% { opacity: 0.9; }
-  50% { opacity: 0.5; }
-}
-
 /* Clean Panels */
 .telemetry-panel {
   background: var(--space-surface);
   border: 1px solid var(--space-border);
   border-radius: 12px;
   box-shadow: var(--space-shadow);
+  transition: box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 180ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Monospace Numbers */
-.telemetry-num {
+.telemetry-panel:hover {
+  box-shadow: 0 8px 24px -8px rgba(30, 36, 33, 0.08);
+  border-color: #214E3C;
+}
+
+/* Monospace Numbers & Tabular Numeric Readouts */
+.telemetry-num,
+.control-val,
+.stat-val,
+.metric-counter,
+.metric-value,
+.telemetry-value,
+.telemetry-heading strong,
+.control-readings dd,
+.timeline-top > span:last-child,
+.physics-features-list li strong,
+.part-facts dd,
+#grav-morph-val,
+input[type="range"] {
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.5px;
+}
+
+/* Global Micro-Interactions on Interactive Elements */
+button,
+.primary,
+.secondary,
+.quick-chip {
+  transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              color 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* High-Contrast Citations */
@@ -377,7 +409,7 @@ body.module-active #explore-hint {
   border: 1px solid rgba(33, 78, 60, 0.25);
   padding: 2px 6px;
   border-radius: 4px;
-  transition: all 0.15s ease;
+  transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .citation-link:hover {
@@ -395,4 +427,70 @@ body.module-active #explore-hint {
   z-index: 10;
   display: flex;
   flex-direction: column;
+}
+
+/* Global Range Slider Micro-Refinements */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #E5E2DC;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  accent-color: #214E3C;
+  transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  background: #E5E2DC;
+  border-radius: 3px;
+  border: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #214E3C;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 1px 4px rgba(30, 36, 33, 0.25);
+  cursor: pointer;
+  margin-top: -5px;
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background: #17372A;
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  background: #E5E2DC;
+  border-radius: 3px;
+  border: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #214E3C;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 1px 4px rgba(30, 36, 33, 0.25);
+  cursor: pointer;
+  border: none;
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  background: #17372A;
 }

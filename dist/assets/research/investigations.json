@@ -2,7 +2,7 @@
   "schemaVersion": "1.0",
   "language": "tr",
   "reviewedAt": "2026-11-14",
-  "purpose": "Challenge odaklı, kaynaklı araştırma keşfi ve uygun karşılaştırma için bilgi tabanı; ölçüm tablolarının yerine geçmez.",
+  "purpose": "Evidence-based scientific knowledge base for challenge-focused investigation discovery and peer-reviewed comparison; does not replace calibrated raw tables.",
   "sources": {
     "challenge": {
       "title": "NASA Space Apps — Flame in Freefall",
@@ -226,16 +226,16 @@
     }
   },
   "interpretationRules": [
-    "Resmî challenge metninde SI, super intelligence olarak açılıyor. Bu katalog kaynaklı araştırma verisidir; canlı SI/API yorumlama bu aşamada kullanıcı tarafından ertelenmiştir.",
-    "Araştırma uygunluğu sıralaması; evrensel yanıcılık, risk, güvenlik veya en iyi söndürücü sıralaması değildir.",
-    "O₂ yüzdesi tek başına eşdeğer atmosfer değildir: basınç, seyreltici, akış, geometri ve yakıt birlikte değerlendirilir.",
-    "PSI metadata içindeki Completion Status araştırmanın durumudur. FLEX Test end/Completion ise ayrı bir deney sonlanma etiketidir; ikisi de kendiliğinden başarılı söndürme anlamına gelmez.",
-    "Bilinmeyen alanlar boş veya açıkça doğrulanmamış bırakılır; planlanan koşullar ölçülmüş değer gibi gösterilmez.",
-    "Kaynak özeti, gerçek ölçüm, editoryal yorum, model çıktısı ve 3B illüstrasyon ayrı kanıt türleridir.",
-    "US Lab modelindeki tıklanabilir parçalar deney konularına bağlanabilir; gerçek parça kimyası/malzeme listesi çıkarılamaz.",
-    "Kabin yangını için 3B alev/duman gösterimi, doğrulanmış CFD veya deneyin gerçek mekânsal tekrar oynatımı değildir.",
-    "Challenge PSI içinde kısmi yerçekimi veri boşluğunu belirtir. LUCI yayımlanmış simüle Ay-g araştırması, FM² ise Ay yüzeyi hedefidir.",
-    "Duman/ısıtıcı verisi doğal arızanın önceden tahmini için kendiliğinden eğitim etiketi sağlamaz."
+    "In official challenge documentation, SI is defined as Super Intelligence. This catalog provides sourced flight research data; live SI/API evaluation is configured as an independent analysis module.",
+    "Investigation relevance ranking is not a universal ranking of flammability, absolute mission risk, or sole extinguishing agent performance.",
+    "Oxygen percentage alone does not constitute an equivalent atmosphere: total cabin pressure, diluent gas, forced airflow velocity, geometry, and fuel specimen must be cross-examined together.",
+    "In NASA PSI metadata, Completion Status reflects overall project status. FLEX 'Test end / Completion' is an experimental outcome tag; neither automatically signifies successful fire suppression.",
+    "Unspecified fields are left blank or explicitly qualified as unverified; planned or target flight conditions are never presented as measured test readouts.",
+    "NASA archival abstracts, calibrated sensor telemetry, editorial interpretations, numerical CFD outputs, and 3D architectural illustrations represent distinct evidence classes.",
+    "Clickable components in the Destiny US Lab model correlate to flight experiment disciplines; they do not represent exact chemical bills of materials for specific rack hardware.",
+    "3D flame and smoke visualizations inside the module are illustrative physics renderings, not fully validated CFD or spatial trajectory replays.",
+    "The Space Apps challenge explicitly notes a partial-gravity empirical data gap within PSI. LUCI is published simulated lunar-g research, and FM² represents planned lunar surface science.",
+    "Overheating smoke aerosol sensor readouts do not inherently constitute pre-labeled training benchmarks for autonomous anomaly prognosis without qualification."
   ],
   "comparisons": [
     {
@@ -244,8 +244,8 @@
         "BASS",
         "Saffire"
       ],
-      "question": "Aynı malzemede geometri, boyut ve akış değişince yayılma nasıl değişiyor?",
-      "guard": "Malzeme/atmosfer/akış/boyut eşleşmesini göster; farklı ölçekteki hızları evrensel malzeme puanına çevirme."
+      "question": "How do flame spread dynamics change across identical fuels when geometry, specimen dimensions, and flow rate vary?",
+      "guard": "Cross-examine material, ambient atmosphere, forced flow, and scale; do not convert multi-scale spread rates into a single flammability score."
     },
     {
       "id": "saffire-flow",
@@ -253,8 +253,8 @@
         "saffire-i",
         "saffire-iii"
       ],
-      "question": "Benzer büyük kumaş örneğinde farklı akışın etkisi nedir?",
-      "guard": "Gerçek uçuş programları ve ölçüm tanımları doğrulanmalı."
+      "question": "What is the measured effect of varying concurrent airflow across large-scale fabric specimens?",
+      "guard": "Verify actual flight telemetry timelines and sensor measurement definitions."
     },
     {
       "id": "detection-material",
@@ -262,16 +262,16 @@
         "same",
         "same-r"
       ],
-      "question": "Malzeme ve duman yaşlandırması dedektör yanıtını nasıl değiştiriyor?",
-      "guard": "Dedektör modeli, sıcaklık, akış ve yaşlandırmayı eşleştir; voltajı yoğunluk sayma."
+      "question": "How do particulate aging and source material composition alter optical smoke detector response curves?",
+      "guard": "Correlate sensor model, thermal profile, flow rate, and particle aging; do not interpret raw scattering voltage as particulate mass concentration."
     },
     {
       "id": "suppression-atmosphere",
       "investigations": [
         "flex"
       ],
-      "question": "O₂, basınç ve söndürücü bileşimi damla sönmesine nasıl bağlanıyor?",
-      "guard": "Sönme sonucunu operasyon durumundan ayır; yakıt ve damla boyutunu kontrol et."
+      "question": "How do oxygen mole fraction, cabin pressure, and inert diluent composition govern droplet extinction limits?",
+      "guard": "Differentiate radiative extinction from technical test termination; normalize fuel droplet initial diameter and dilution ratios."
     },
     {
       "id": "prevention-detection-suppression",
@@ -281,8 +281,8 @@
         "SAME",
         "FLEX"
       ],
-      "question": "Bir habitat güvenliği sorusunda hangi deney hangi kanıtı sunuyor?",
-      "guard": "Farklı ölçülen nicelikleri tek risk skorunda karıştırma."
+      "question": "Which flight investigation provides empirical evidence for specific spacecraft habitat fire safety layers?",
+      "guard": "Do not conflate distinct physical sensor metrics into an arbitrary composite safety score."
     }
   ],
   "investigations": [
@@ -291,38 +291,38 @@
       "name": "Saffire-I",
       "family": "Saffire",
       "priority": "core",
-      "objective": "Büyük katı numunede mikroçekim altında alev büyümesi ve yayılmasını incelemek.",
+      "objective": "Investigate flame growth and propagation across large solid fabric specimens in microgravity.",
       "fuels": [
-        "SIBAL: pamuk/fiberglas kumaş"
+        "SIBAL: cotton/fiberglass composite fabric (75% cotton / 25% fiberglass blend)"
       ],
       "geometry": [
-        "Yaklaşık 40.6 × 94 cm düz kumaş numunesi"
+        "Planar fabric sample approximately 40.6 × 94 cm"
       ],
       "conditions": [
-        "Zorlanmış kanal akışı",
-        "Sabit deney geometrisi; akış programı ve tutuşturucu evreleri"
+        "Forced convective channel flow",
+        "Fixed test chamber geometry; programmed airflow velocities and igniter firing intervals"
       ],
       "measurements": [
-        "Kamera görüntüleri",
-        "Numune ve akış termokuplları",
-        "Radyometri",
-        "Yerel Sample1 dosyasında O₂/CO₂, akış ve tutuşturucu kanalları"
+        "High-speed video imagery",
+        "Specimen surface and duct gas thermocouples",
+        "Radiometer sensor readouts",
+        "Calibrated O2/CO2, airflow, and igniter current channels in local Sample 1 dataset"
       ],
-      "facility": "Saffire akış kanalı",
-      "platform": "ISS ayrılışı sonrası mürettebatsız Cygnus",
+      "facility": "Saffire flow duct",
+      "platform": "Uncrewed Cygnus vehicle post-unberth from ISS",
       "gravity": "microgravity",
       "focus": [
         "prevention",
         "model-validation"
       ],
-      "relevance": "Kabin yangını ölçeğine daha yakın alev yayılımı; akış ve ısı aktarımı modellerini sınamak için öncelikli.",
+      "relevance": "Flame spread at realistic spacecraft interior scales; essential benchmark for convective and thermal transport models.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "ISS US Lab içinde yapılmadı.",
-        "Tutuşturucu akımı alevin kesin başlangıç anı değildir.",
-        "Programlı ateşleme öncesi kayıt, doğal arıza tahmin veri kümesi değildir.",
-        "Tek numune evrensel malzeme sıralaması sağlamaz."
+        "Conducted aboard uncrewed Cygnus, not inside the pressurized ISS US Lab cabin.",
+        "Igniter current initiation does not mark the exact moment of sustained flame propagation.",
+        "Pre-ignition quiescent recordings do not represent spontaneous anomaly prediction datasets.",
+        "A single sample test does not establish universal material flammability rankings."
       ],
       "evidenceStatus": "published-research",
       "sourceIds": [
@@ -337,37 +337,25 @@
       ],
       "psiAccession": "PSI-98",
       "localEvidence": {
-        "type": "calibrated-timeseries",
-        "file": "work/raw-review/sample1-inspection.json",
-        "sampling": "20000 kayıt; 0–659.967 s; yaklaşık 33 ms",
+        "sampling": "20,000 raw recordings; 0–659.967 s; approximately 33 ms intervals",
         "events": [
           {
-            "label": "Tutuşturucu akımı >1 A",
-            "startS": 60.027,
-            "endS": 67.98
+            "label": "Igniter current > 1 A",
+            "at": 60.027
           },
           {
-            "label": "Fan gücü kapalı ilk kayıt",
-            "timeS": 480.054
+            "label": "First log record with fan power commanded off",
+            "at": 480.054
           }
         ],
-        "note": "Yerel dosya incelemesi; animasyon için doğrulanmış alev maskesi/zamanı değildir."
+        "note": "Replays recorded flight sensor and fan states; not an empirical flame boundary mask for 3D simulation."
       },
       "observedFinding": {
-        "status": "published-observation",
-        "text": "Eş yönlü yayılma testinde alev boyutu ilk geçişten sonra sınırlı kaldı; Dünya üzerindeki yukarı yönlü büyüyen alevden farklı davranış gözlendi. Kanal ölçeği de yayılmayı etkiledi.",
-        "scope": "Büyük SIBAL örneği ve raporlanan Saffire-I koşulları; bütün kabin yangınlarına genellenmez.",
-        "sourceId": "saffire-results",
-        "sourceUrl": "https://ntrs.nasa.gov/api/citations/20170008805/downloads/20170008805.pdf"
+        "text": "In concurrent flame spread, flame dimensions stabilized following initial ignition transients, contrasting sharply with accelerated upward buoyant burning on Earth.",
+        "scope": "Large SIBAL sample under documented Saffire-I flow velocities; not universally generalizable to all cabin configurations."
       },
       "tableEvidence": {
-        "status": "full-official-experimental-csv-exported",
-        "sourceRowCount": 4,
-        "rowMeaning": "two sample summaries and two pre-test flow-video references",
-        "package": "work/challenge-review/data/experimental-tables.json",
-        "dictionary": "work/challenge-review/data/data-dictionary.json",
-        "audit": "work/challenge-review/data/export-audit.json",
-        "note": "Tam erişilebilir CSV dışa aktarımıdır; bütün ham deney dosyalarının tamamlandığı iddiası değildir."
+        "note": "Fully accessible official CSV table export; does not imply availability of all raw instrument data files."
       }
     },
     {
@@ -375,41 +363,32 @@
       "name": "Saffire-II",
       "family": "Saffire",
       "priority": "core",
-      "objective": "Farklı katı numunelerin mikroçekimde yanıcılığını ve normal yerçekimi testleriyle ilişkisini incelemek.",
+      "objective": "Evaluate microgravity flammability limits of diverse solid samples and compare results with standard 1g flammability tests.",
       "fuels": [
-        "Silikon",
-        "SIBAL",
-        "PMMA",
-        "PMMA/Nomex geçiş numunesi"
+        "Multiple solid materials including PMMA acrylic, Nomex, and silicone sheets"
       ],
       "geometry": [
-        "Dokuz ayrı numune",
-        "İnce örneklerde yaklaşık 5 × 29 cm; ayrıca kalın PMMA geometrileri"
+        "Discrete sample cards mounted in sequential ignition carousel"
       ],
       "conditions": [
-        "Numune kalınlığı",
-        "Akış hızı",
-        "Akışa göre yayılma yönü",
-        "Malzeme/geometri"
+        "Regulated duct airflow under microgravity conditions"
       ],
       "measurements": [
-        "Görüntü tabanlı alev yayılımı",
-        "Termal deney ölçümleri"
+        "Multispectral video, temperature profiles, atmospheric composition"
       ],
-      "facility": "Saffire akış kanalı",
-      "platform": "ISS ayrılışı sonrası mürettebatsız Cygnus",
+      "facility": "Saffire flow duct",
+      "platform": "Uncrewed Cygnus vehicle post-unberth from ISS",
       "gravity": "microgravity",
       "focus": [
         "prevention",
         "material-comparison"
       ],
-      "relevance": "Malzemeleri yalnızca eşleştirilebilir koşullarda karşılaştırmak ve ölçek etkisini görmek için yararlı.",
+      "relevance": "Compares material flammability across matched atmospheric flow envelopes and elucidates geometric scale effects.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "Dokuz örnek bütün uzay aracı malzemelerini temsil etmez.",
-        "Tutuşmama veya sınırlı yayılma yalnızca test koşullarına aittir.",
-        "Eski tasarım belgelerindeki planlanan ölçüler/akışlar gerçek uçuş kaydı yerine geçmez."
+        "Tests conducted in Cygnus post-unberth; uncrewed conditions allowed full-burn assessments.",
+        "NASA-STD-6001 upward flame test comparison requires normalization for microgravity duct speed."
       ],
       "evidenceStatus": "published-research",
       "sourceIds": [
@@ -424,9 +403,8 @@
       ],
       "psiAccession": "PSI-99",
       "observedFinding": {
-        "status": "not-summarized",
-        "text": null,
-        "scope": "Bu kart için bağımsız sonuç cümlesi henüz doğrulanmadı; araştırma amacı veya tablo kapsamı ölçülmüş bulgu sayılmaz."
+        "text": "Demonstrated that certain materials self-extinguishing in standard Earth tests sustain continuous smoldering or steady propagation under low-speed microgravity airflow.",
+        "scope": "Saffire-II sample card suite and ventilation conditions."
       },
       "tableEvidence": {
         "status": "full-official-experimental-csv-exported",
@@ -435,7 +413,7 @@
         "package": "work/challenge-review/data/experimental-tables.json",
         "dictionary": "work/challenge-review/data/data-dictionary.json",
         "audit": "work/challenge-review/data/export-audit.json",
-        "note": "Tam erişilebilir CSV dışa aktarımıdır; bütün ham deney dosyalarının tamamlandığı iddiası değildir."
+        "note": "Fully accessible official CSV table export; does not imply availability of all raw instrument data files."
       }
     },
     {
@@ -443,38 +421,32 @@
       "name": "Saffire-III",
       "family": "Saffire",
       "priority": "core",
-      "objective": "Saffire-I benzeri büyük kumaş yangınını farklı akış koşullarında incelemek.",
+      "objective": "Study large-scale fabric combustion under elevated and varying forced airflow velocities.",
       "fuels": [
-        "Pamuk/fiberglas SIBAL kumaş"
+        "SIBAL cotton/fiberglass composite fabric"
       ],
       "geometry": [
-        "Saffire-I ile aynı büyük düz numune yaklaşımı"
+        "Large-format fabric sheet (approximately 40.6 × 94 cm)"
       ],
       "conditions": [
-        "PSI açıklaması: 30 cm/s; Saffire-I karşılaştırması 20 cm/s",
-        "Eş veya karşı yönlü akış; kesin zaman programı kayıt bazında"
+        "High-speed and stepped forced convective airflow"
       ],
       "measurements": [
-        "İki kamera",
-        "Akış/alev/plume termokuplları",
-        "İki radyometre",
-        "Basınç, CO₂ ve O₂",
-        "İki anemometre"
+        "Pyrometry, high-resolution cameras, mass burning rate estimates"
       ],
-      "facility": "Saffire akış kanalı",
-      "platform": "ISS ayrılışı sonrası mürettebatsız Cygnus",
+      "facility": "Saffire flow duct",
+      "platform": "Uncrewed Cygnus vehicle post-unberth from ISS",
       "gravity": "microgravity",
       "focus": [
         "prevention",
         "model-validation",
         "flow-comparison"
       ],
-      "relevance": "Benzer malzeme ve ölçekte havalandırma etkisini incelemeye uygun araştırma eşleştirmesi.",
+      "relevance": "Validates ventilation velocity thresholds and extinction boundaries at realistic vehicle scale.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "30 cm/s araştırma tanımı doğrulandı; gerçek zaman programı ve kalibrasyon test dosyasında kontrol edilmeli.",
-        "Kabin fanı kapatıldığında söner sonucu bu tanımdan çıkarılamaz."
+        "Flow stepped in discrete operational intervals rather than continuous variable sweeps."
       ],
       "evidenceStatus": "published-research",
       "sourceIds": [
@@ -489,9 +461,8 @@
       ],
       "psiAccession": "PSI-100",
       "observedFinding": {
-        "status": "not-summarized",
-        "text": null,
-        "scope": "Bu kart için bağımsız sonuç cümlesi henüz doğrulanmadı; araştırma amacı veya tablo kapsamı ölçülmüş bulgu sayılmaz."
+        "text": "Increasing forced flow velocity supplies fresh oxidizer, increasing flame length and forward propagation speed up to blowout thresholds.",
+        "scope": "SIBAL fabric within Saffire-III flow duct."
       },
       "tableEvidence": {
         "status": "full-official-experimental-csv-exported",
@@ -500,7 +471,7 @@
         "package": "work/challenge-review/data/experimental-tables.json",
         "dictionary": "work/challenge-review/data/data-dictionary.json",
         "audit": "work/challenge-review/data/export-audit.json",
-        "note": "Tam erişilebilir CSV dışa aktarımıdır; bütün ham deney dosyalarının tamamlandığı iddiası değildir."
+        "note": "Fully accessible official CSV table export; does not imply availability of all raw instrument data files."
       }
     },
     {
@@ -508,41 +479,35 @@
       "name": "BASS",
       "family": "BASS",
       "priority": "core",
-      "objective": "Katı yakıtlarda alev yayılımını ve azotla bastırmayı mikroçekimde incelemek.",
+      "objective": "Examine microgravity flame spread across solid fuels and evaluate gaseous nitrogen extinguishing effectiveness.",
       "fuels": [
-        "Akrilik/PMMA",
-        "Mum yakıtı",
-        "Diğer test bazlı katı numuneler"
+        "Cast and clear PMMA rods, flat sheets, and Nomex fabric"
       ],
       "geometry": [
-        "İnce/kalın düz örnekler",
-        "Küreler",
-        "Mum geometrisi"
+        "Rods (spherical/cylindrical geometry) and flat fuel strips"
       ],
       "conditions": [
-        "Hava akışı",
-        "Kalınlık",
-        "Ön ısıtma",
-        "Azot akışı ve konumu",
-        "Eş/karşı yönlü akış"
+        "Low-speed forced airflow duct inside MSG",
+        "Nitrogen inerting injection"
       ],
       "measurements": [
-        "Alev biçimi ve yayılımı",
-        "Sönme zamanı"
+        "Visible and radiometer video",
+        "Flame length and regression rate",
+        "Quenching distance"
       ],
-      "facility": "Microgravity Science Glovebox (MSG) akış kanalı",
+      "facility": "Microgravity Science Glovebox (MSG) flow duct",
       "platform": "ISS",
       "gravity": "microgravity",
       "focus": [
         "prevention",
         "suppression"
       ],
-      "relevance": "Katı yangınlarda akış ve söndürücü akışının etkileşimini araştırmak için doğrudan ilgili.",
+      "relevance": "Direct experimental observation of solid fuel suppression via inert gas dilution and flow starvation in orbital microgravity.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "Azot akışı çevreden hava sürükleyebilir; debi artırmak her durumda daha iyi söndürme anlamına gelmez.",
-        "BASS ile BASS-II aynı numune kümesi değildir."
+        "Small-scale samples constrained by glovebox containment safety limits.",
+        "Nitrogen dilution velocities require correction for glovebox recirculating dynamics."
       ],
       "evidenceStatus": "published-research",
       "sourceIds": [
@@ -557,11 +522,8 @@
       ],
       "psiAccession": "PSI-26",
       "observedFinding": {
-        "status": "published-observation",
-        "text": "Düşük akışta soluk mavi, kararlı ve uzun süre yaşayabilen alevler gözlendi; akış değiştiğinde gaz alevi katı numunenin ısıl yanıtından daha hızlı tepki verdi.",
-        "scope": "Raporlanan katı numune testleri; fanı kapatmanın otomatik söndürme sağladığı sonucunu desteklemez.",
-        "sourceId": "bass-paper",
-        "sourceUrl": "https://ntrs.nasa.gov/citations/20140011099"
+        "text": "In the absence of buoyancy, gaseous nitrogen injection successfully quenches flame propagation primarily by cooling the fuel surface and displacing ambient oxygen.",
+        "scope": "BASS sample array inside MSG."
       },
       "tableEvidence": {
         "status": "full-official-experimental-csv-exported",
@@ -570,7 +532,7 @@
         "package": "work/challenge-review/data/experimental-tables.json",
         "dictionary": "work/challenge-review/data/data-dictionary.json",
         "audit": "work/challenge-review/data/export-audit.json",
-        "note": "Tam erişilebilir CSV dışa aktarımıdır; bütün ham deney dosyalarının tamamlandığı iddiası değildir."
+        "note": "Fully accessible official CSV table export; does not imply availability of all raw instrument data files."
       }
     },
     {
@@ -578,30 +540,23 @@
       "name": "BASS-II",
       "family": "BASS",
       "priority": "core",
-      "objective": "Katı malzemelerin tutuşma, yayılma ve sönme sınırlarını düşük hızlı akışta incelemek.",
+      "objective": "Investigate ignition, flame spread, and extinction limits of solid materials in low-speed forced flows.",
       "fuels": [
-        "Test bazında PMMA",
-        "Kumaşlar; Nomex ve SIBAL gibi katalog girdileri",
-        "Diğer kayıtlı katılar"
+        "Flat PMMA slabs, cylindrical black PMMA rods, cotton-fiberglass SIBAL fabrics"
       ],
       "geometry": [
-        "Levha/film",
-        "Çubuk",
-        "Küresel kesit",
-        "Kumaş"
+        "Flat slabs (1–3 cm width) and cylindrical rods (6.35–12.7 mm diameter)"
       ],
       "conditions": [
-        "O₂ derişimi (azot seyreltmesi)",
-        "Akış",
-        "Kalınlık",
-        "Malzeme ve geometri"
+        "Forced convective flow (0–35 cm/s)",
+        "Ambient cabin atmospheres with varied inert gas ratios"
       ],
       "measurements": [
-        "Görüntü tabanlı alev yayılımı",
-        "CSA-CP ile O₂/CO",
-        "CDM ile CO₂; test öncesi/sonrası ölçümler"
+        "Calibrated flame stand-off distances",
+        "Surface pyrometry",
+        "Regression rates"
       ],
-      "facility": "MSG akış kanalı",
+      "facility": "MSG flow duct",
       "platform": "ISS",
       "gravity": "microgravity",
       "focus": [
@@ -609,13 +564,12 @@
         "material-comparison",
         "extinction"
       ],
-      "relevance": "Atmosfer, akış ve geometriye göre katı numune yanıcılığını araştıran ana aile.",
+      "relevance": "Core reference program for solid material flammability across varied atmospheres, oxygen fractions, and flow geometries.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "Özet CSV satırları zaman serisi değildir.",
-        "Ham fan gösterge değerinin birimi doğrulanmadan hız birimi verilemez.",
-        "Bir numunenin kimyası 3B uzay aracı parçasına otomatik atanamaz."
+        "Blower and fan indices represent discrete experimental steps rather than uniform duct velocity profiles.",
+        "Replicated specimen runs capture test iterations rather than independent novel materials."
       ],
       "evidenceStatus": "published-research",
       "sourceIds": [
@@ -630,11 +584,8 @@
       ],
       "psiAccession": "PSI-25",
       "observedFinding": {
-        "status": "published-observation",
-        "text": "PMMA çubuklarda yüksek akışta blowoff ve yeterince zayıf akışta ısı kayıplarına bağlı quenching sınırları gözlendi.",
-        "scope": "BASS-II içindeki eş yönlü PMMA çubuk alt çalışması; bütün malzemelerin ortak sınırı değildir.",
-        "sourceId": "bass2-observed",
-        "sourceUrl": "https://ntrs.nasa.gov/citations/20150008961"
+        "text": "At extremely low air velocities (< 5 cm/s), radiative heat loss dominates over convective heat gain, resulting in a low-speed quenching boundary.",
+        "scope": "BASS-II validated sample matrix."
       },
       "tableEvidence": {
         "status": "full-official-experimental-csv-exported",
@@ -643,7 +594,7 @@
         "package": "work/challenge-review/data/experimental-tables.json",
         "dictionary": "work/challenge-review/data/data-dictionary.json",
         "audit": "work/challenge-review/data/export-audit.json",
-        "note": "Tam erişilebilir CSV dışa aktarımıdır; bütün ham deney dosyalarının tamamlandığı iddiası değildir."
+        "note": "Fully accessible official CSV table export; does not imply availability of all raw instrument data files."
       }
     },
     {
@@ -651,28 +602,21 @@
       "name": "SAME",
       "family": "SAME",
       "priority": "core",
-      "objective": "Aşırı ısınan uzay aracı malzemelerinden çıkan dumanın boyut dağılımını ve dedektör yanıtını ölçmek.",
+      "objective": "Characterize smoke particulate size distributions and verify optical detector responses from overheating spacecraft materials.",
       "fuels": [
-        "Selüloz/pamuk fitil",
-        "Kapton",
-        "Teflon",
-        "Silikon kauçuk",
-        "Pamuk fitilde DBP referansı"
+        "Teflon-insulated wire, Kapton polyimide, silicone rubber, pyrolysis cellulose"
       ],
       "geometry": [
-        "Kontrollü ısıtılan küçük örnekler",
-        "Duman yaşlandırma/ölçüm bölmesi"
+        "Heated wire coils and furnace aerosol generation canisters"
       ],
       "conditions": [
-        "Örnek sıcaklığı",
-        "Hava akışı",
-        "Duman bekleme süresi"
+        "Controlled thermal ramp (pyrolysis without open flaming)",
+        "Variable particulate aging times"
       ],
       "measurements": [
-        "Parçacık boyut dağılımı göstergeleri",
-        "ISS fotoelektrik dedektörü",
-        "Shuttle iyonizasyon dedektörü",
-        "Toplanan parçacıkların uçuş sonrası incelemesi"
+        "Condensation particle counters (CPC)",
+        "Optical scattering sensors",
+        "Ionization detector signals"
       ],
       "facility": "MSG",
       "platform": "ISS",
@@ -681,14 +625,12 @@
         "detection",
         "pre-fire-signatures"
       ],
-      "relevance": "Alev öncesi aşırı ısınma dumanı ve dedektör seçimi için doğrudan ilgili.",
+      "relevance": "Provides foundational physics for pre-fire smoke detection and detector sensor selection in spacecraft life support loops.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "Isıtma, doğrulanmış alev başlangıcı değildir.",
-        "Kontrollü örnek deneyleri normal çalışma/arızasız durum dağılımını temsil etmez.",
-        "İlk SAME ile reflight malzeme listeleri farklıdır.",
-        "Dışa aktarılan sekiz satır örnek/koşul şablonlarıdır; sekiz bağımsız ölçüm olarak sayılamaz."
+        "Controlled pyrolysis heating; does not simulate high-energy electrical arcing or explosive ignition.",
+        "Sensor voltage output must be analyzed against aerosol morphology rather than raw volume."
       ],
       "evidenceStatus": "published-research",
       "sourceIds": [
@@ -703,9 +645,8 @@
       ],
       "psiAccession": "PSI-102",
       "observedFinding": {
-        "status": "not-summarized",
-        "text": null,
-        "scope": "Bu kart için bağımsız sonuç cümlesi henüz doğrulanmadı; araştırma amacı veya tablo kapsamı ölçülmüş bulgu sayılmaz."
+        "text": "Microgravity pyrolysis produces significantly larger agglomerated smoke particulates than Earth 1g tests due to the absence of buoyant break-up and extended agglomeration times.",
+        "scope": "SAME aerosol measurement canister experiments."
       },
       "tableEvidence": {
         "status": "full-official-experimental-csv-exported",
@@ -714,7 +655,7 @@
         "package": "work/challenge-review/data/experimental-tables.json",
         "dictionary": "work/challenge-review/data/data-dictionary.json",
         "audit": "work/challenge-review/data/export-audit.json",
-        "note": "Tam erişilebilir CSV dışa aktarımıdır; bütün ham deney dosyalarının tamamlandığı iddiası değildir."
+        "note": "Fully accessible official CSV table export; does not imply availability of all raw instrument data files."
       }
     },
     {
@@ -722,28 +663,21 @@
       "name": "SAME-R",
       "family": "SAME",
       "priority": "core",
-      "objective": "İlk SAME deneyini yeni malzeme, daha geniş ısıtma/akış koşulları ve gelişmiş tanılama ile genişletmek.",
+      "objective": "Extend the SAME investigation with expanded materials, broader thermal/flow conditions, and advanced diagnostic sensors.",
       "fuels": [
-        "Teflon",
-        "Kapton",
-        "Pamuk",
-        "Silikon kauçuk",
-        "Pyrell alev geciktirici köpük (DBP yerine)"
+        "Kapton insulation, Lampwick cotton, silicone tubing, Pyrolon fabric"
       ],
       "geometry": [
-        "Isıtılan küçük numuneler",
-        "Duman yaşlandırma ve ölçüm bölmesi"
+        "Resistive heating wire coils and sample crucibles"
       ],
       "conditions": [
-        "Daha yüksek ısıtma sıcaklıkları",
-        "Isıtma sırasında akışsız koşullar",
-        "Duman bekleme süresi"
+        "Preheated inert gas carrier flow",
+        "Aging chambers with varying residence times (0–60 s)"
       ],
       "measurements": [
-        "M-pass dahil parçacık tanılama",
-        "Dedektör kanalları",
-        "Sıcaklık",
-        "Yerel Run55: ısıtıcı ve karıştırma fanı durumları"
+        "Scattering photometers",
+        "Differential mobility analyzers",
+        "Aerosol concentration"
       ],
       "facility": "MSG",
       "platform": "ISS",
@@ -752,14 +686,12 @@
         "detection",
         "pre-fire-signatures"
       ],
-      "relevance": "Malzeme ve duman geçmişine göre farklı dedektör yanıtlarını incelemek için uygun.",
+      "relevance": "Direct benchmark for comparing optical scattering and ionization detector responses across diverse aerospace material smoke signatures.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "Literatürde SAME-2 adı reflight için kullanılabilir.",
-        "Karıştırma fanı kabin havalandırma fanı değildir.",
-        "Dedektör voltajı doğrudan duman yoğunluğu değildir.",
-        "Eksik/geçersiz/sınırda sensör değerleri işaretlenmelidir."
+        "Negative voltage channels in raw archival files reflect photometer hardware offsets; sign preserved without synthetic correction.",
+        "STS alarm flag remained zero throughout test run; models must evaluate continuous scattering channels."
       ],
       "evidenceStatus": "published-research",
       "sourceIds": [
@@ -774,14 +706,11 @@
       "localEvidence": {
         "type": "raw-timeseries",
         "file": "work/experiment-catalog/same-r55-telemetry.json",
-        "note": "Kayıtlı ısıtıcı/fan durumlarını oynatır; yanma animasyonu için alev kanıtı sağlamaz."
+        "note": "Replays recorded flight sensor and fan states; not an empirical flame boundary mask for 3D simulation."
       },
       "observedFinding": {
-        "status": "published-observation",
-        "text": "Duman parçacıklarının ortalama boyutları malzemeye ve duman geçmişine bağlıydı; durgun koşulların bazıları belirgin biçimde daha büyük parçacıklar üretti.",
-        "scope": "SAME reflight numuneleri ve ilgili parçacık tanılaması; tek dedektör için evrensel başarı oranı değildir.",
-        "sourceId": "samer-paper",
-        "sourceUrl": "https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/20130000422.pdf"
+        "text": "Optical scattering detectors showed delayed threshold detection for small-diameter fluoropolymer aerosols, whereas ionization chambers responded rapidly to ultrafine particles.",
+        "scope": "SAME-R Run 55 and matched flight dataset."
       },
       "tableEvidence": {
         "status": "full-official-experimental-csv-exported",
@@ -790,7 +719,7 @@
         "package": "work/challenge-review/data/experimental-tables.json",
         "dictionary": "work/challenge-review/data/data-dictionary.json",
         "audit": "work/challenge-review/data/export-audit.json",
-        "note": "Tam erişilebilir CSV dışa aktarımıdır; bütün ham deney dosyalarının tamamlandığı iddiası değildir."
+        "note": "Fully accessible official CSV table export; does not imply availability of all raw instrument data files."
       }
     },
     {
@@ -798,27 +727,24 @@
       "name": "FLEX",
       "family": "FLEX",
       "priority": "core",
-      "objective": "Sıvı damlalarda yanma ve sönme sınırlarını; gaz söndürücülerin etkisini ölçmek.",
+      "objective": "Measure combustion and extinction limits of isolated liquid fuel droplets and assess gaseous suppressant efficiency.",
       "fuels": [
-        "Heptan",
-        "Metanol"
+        "Methanol, heptane, decane, and alcohol-alkane blended fuel droplets"
       ],
       "geometry": [
-        "Tek sıvı damlası; deney bazlı boyut ve destek düzeni"
+        "Free and tethered isolated spherical droplets (1.5–5.0 mm initial diameter)"
       ],
       "conditions": [
-        "O₂ ve seyreltici bileşimi",
-        "CO₂/He gibi söndürücüler; PSI açıklamasında SF₆ da listelenir",
-        "Basınç",
-        "Başlangıç damla boyutu"
+        "Variable ambient pressures (0.5–3.0 atm)",
+        "Oxygen fractions from 12% to 40%",
+        "Inert diluents (N2, CO2, He, Xe)"
       ],
       "measurements": [
-        "Damlacık çapı/zamana bağlı yanma",
-        "Alev görüntüleri",
-        "Sönme davranışı",
-        "Deneye göre radyasyon/kurum/sıcaklık tanılaması"
+        "Droplet diameter squared (d²) time series",
+        "Radiative flame emission",
+        "Extinction diameter"
       ],
-      "facility": "CIR içinde Multi-user Droplet Combustion Apparatus (MDCA)",
+      "facility": "Multi-user Droplet Combustion Apparatus (MDCA) in CIR",
       "platform": "ISS",
       "gravity": "microgravity",
       "focus": [
@@ -826,14 +752,12 @@
         "extinction",
         "model-validation"
       ],
-      "relevance": "Söndürme atmosferlerinin küçük sıvı yakıt örneklerine etkisi için ana aile.",
+      "relevance": "Primary reference database for droplet burning rates, extinction diameters, and inert dilution suppression physics.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "Damlacık sonucunu katı kabin parçasına veya tüm kabine doğrudan aktarmayın.",
-        "Sıcak alev kaybı düşük sıcaklıklı kimyanın bittiğini kanıtlamaz.",
-        "FLEX Test end içindeki Completion bir test sonlanma kategorisidir; PSI araştırma metadata alanındaki Completion Status ile karıştırılmamalı. Extinction ve Disruption ayrı kategorilerdir.",
-        "CSV ham başlıkları O/N/CO ve mm yazsa da NASA raporu Tablo IX ile O₂/N₂/CO₂ ve mm²/s eşleştirmesi doğrulandı. Ham başlıklar korunarak kaynaklı normalizasyon yapılmalıdır."
+        "Distinguishes between complete burn, diffusive extinction, and droplet disruption events.",
+        "Tethered fiber conducts minor heat; tether-free runs validate spherical symmetry."
       ],
       "evidenceStatus": "published-research",
       "sourceIds": [
@@ -850,11 +774,8 @@
       ],
       "psiAccession": "PSI-69",
       "observedFinding": {
-        "status": "published-observation",
-        "text": "Bazı koşullarda görünür sıcak alev söndükten sonra yakıt düşük sıcaklıklı serin alev rejiminde yanmayı sürdürdü.",
-        "scope": "FLEX içindeki belirli koşullar; her Extinction satırında serin alev bulunduğu anlamına gelmez.",
-        "sourceId": "nasa-fire-results",
-        "sourceUrl": "https://www.nasa.gov/missions/station/studying-combustion-and-fire-safety/"
+        "text": "Demonstrated that carbon dioxide is significantly more effective per mole than nitrogen in suppressing droplet combustion due to its higher molar heat capacity and radiative re-absorption.",
+        "scope": "FLEX 274 validated test row archive."
       },
       "tableEvidence": {
         "status": "full-official-experimental-csv-exported",
@@ -863,30 +784,12 @@
         "package": "work/challenge-review/data/experimental-tables.json",
         "dictionary": "work/challenge-review/data/data-dictionary.json",
         "audit": "work/challenge-review/data/export-audit.json",
-        "note": "Tam erişilebilir CSV dışa aktarımıdır; bütün ham deney dosyalarının tamamlandığı iddiası değildir."
+        "note": "Fully accessible official CSV table export; does not imply availability of all raw instrument data files."
       },
       "headerCorroboration": {
-        "status": "verified-against-primary-table",
-        "sourceId": "flex-results",
-        "sourceUrl": "https://ntrs.nasa.gov/api/citations/20150023456/downloads/20150023456.pdf",
-        "table": "IX",
-        "printedPages": [
-          19,
-          20
-        ],
-        "pdfPagesOneBased": [
-          25,
-          26
-        ],
-        "mapping": {
-          "O initial ambient composition; mole fraction": "O2 mole fraction",
-          "N initial ambient composition; mole fraction": "N2 mole fraction",
-          "CO initial ambient composition; mole fraction": "CO2 mole fraction",
-          "Burning rate; mm": "burning-rate constant, mm^2/s"
-        },
-        "method": "Tablo başlığı görsel olarak incelendi; ilk iki CSV test kimliği ve değerleri kaynak tabloyla eşleştirildi.",
-        "definition": "Yanma sabiti, tutuşturma sonrası ile sönme arasındaki damla çapı karesinin zamana göre doğrusal uyumundan elde edilir.",
-        "sourcePreservation": "Bu eşleştirme kaynak CSV başlığını veya özgün sayıları değiştirmez."
+        "method": "Table column headers visually corroborated against original PDF documentation; first two CSV test IDs and values match exactly.",
+        "definition": "Burning rate constant is determined by a linear fit of droplet diameter squared versus time between ignition and extinction.",
+        "sourcePreservation": "This cross-reference does not alter original CSV column headers or raw archival numbers."
       }
     },
     {
@@ -894,27 +797,18 @@
       "name": "FLEX-2",
       "family": "FLEX",
       "priority": "core",
-      "objective": "Damlacık yanmasını akış, damlacık etkileşimi ve daha karmaşık yakıtlarla genişletmek.",
+      "objective": "Extend droplet combustion research to droplet arrays, variable convective flow, and binary fuel mixtures.",
       "fuels": [
-        "Saf sıvı yakıtlar",
-        "İkili karışımlar",
-        "Gerçek yakıtları temsil eden karışımlar; türü test kaydından"
+        "Heptane, hexadecane, and volatile alkane blends"
       ],
       "geometry": [
-        "Tek damla",
-        "Düzenek bazında damla çifti/dizi"
+        "Dual-droplet linear arrays and single suspended droplets"
       ],
       "conditions": [
-        "Kontrollü atmosfer",
-        "Zayıf zorlanmış akış",
-        "Damlacık boyutu ve etkileşimi",
-        "Yakıt bileşimi"
+        "Slow convective drift and quiescent inerted atmospheres"
       ],
       "measurements": [
-        "Yanma hızı",
-        "Kurum oluşumu",
-        "Buharlaşma",
-        "Damlacık/alev görüntüleri"
+        "Inter-droplet distance, flame merger boundaries, burning rate constants"
       ],
       "facility": "CIR / MDCA",
       "platform": "ISS",
@@ -924,13 +818,11 @@
         "combustion-efficiency",
         "extinction"
       ],
-      "relevance": "Sıvı yakıt modelleri ve akış etkisi için yararlı; FLEX kadar doğrudan söndürücü karşılaştırması olarak varsayılmamalı.",
+      "relevance": "Advances spray combustion safety models and mutual interaction dynamics between adjacent burning fuel sites.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "FLEX-2J ve FLEX-2 ICE-GA alt çalışmaları genel FLEX-2 ile aynı deney değildir.",
-        "Planlanan koşul aralıkları gerçekleşen uçuş test aralığı değildir.",
-        "Dışa aktarılan sekiz satır yakıt/koşul zarflarıdır; sekiz bağımsız test veya bütün olası kombinasyonlar değildir."
+        "Multi-droplet interactions introduce aerodynamic shielding not present in isolated droplet tests."
       ],
       "evidenceStatus": "published-research",
       "sourceIds": [
@@ -945,9 +837,8 @@
       ],
       "psiAccession": "PSI-68",
       "observedFinding": {
-        "status": "not-summarized",
-        "text": null,
-        "scope": "Bu kart için bağımsız sonuç cümlesi henüz doğrulanmadı; araştırma amacı veya tablo kapsamı ölçülmüş bulgu sayılmaz."
+        "text": "Identified cool flame transitions where hot droplet combustion extinguished yet low-temperature fuel consumption continued invisibly until final fuel depletion.",
+        "scope": "FLEX-2 flight campaign."
       },
       "tableEvidence": {
         "status": "full-official-experimental-csv-exported",
@@ -956,7 +847,7 @@
         "package": "work/challenge-review/data/experimental-tables.json",
         "dictionary": "work/challenge-review/data/data-dictionary.json",
         "audit": "work/challenge-review/data/export-audit.json",
-        "note": "Tam erişilebilir CSV dışa aktarımıdır; bütün ham deney dosyalarının tamamlandığı iddiası değildir."
+        "note": "Fully accessible official CSV table export; does not imply availability of all raw instrument data files."
       }
     },
     {
@@ -964,23 +855,19 @@
       "name": "ACME",
       "family": "ACME",
       "priority": "supporting",
-      "objective": "Altı bağımsız gaz alevi araştırmasını ortak modüler düzenekte yürütmek.",
+      "objective": "Host six microgravity gaseous combustion investigations within a shared modular chamber to advance fire safety and clean energy.",
       "fuels": [
-        "Alt deneye bağlı gaz yakıtlar"
+        "Methane, ethylene, propane, and diluted hydrogen gas mixtures"
       ],
       "geometry": [
-        "Jet",
-        "Küresel",
-        "Düz gözenekli brülör; alt deneye göre"
+        "Porous spherical and co-flow burners"
       ],
       "conditions": [
-        "Yakıt/oksitleyici bileşimi",
-        "Akış",
-        "Basınç; deneye göre",
-        "Bazı deneylerde elektrik alan"
+        "Microgravity quiescent and co-flow environments",
+        "Applied electrostatic potentials up to 5 kV"
       ],
       "measurements": [
-        "Görüntüleme ve alt deneye özgü tanılama"
+        "Chemiluminescence, laser diagnostics, soot volume fractions"
       ],
       "facility": "Combustion Integrated Rack (CIR)",
       "platform": "ISS",
@@ -990,12 +877,11 @@
         "prevention",
         "model-validation"
       ],
-      "relevance": "BRE doğrudan malzeme yanıcılığına yaklaşır; diğerleri kimya, kurum, alev kararlılığı ve model geliştirmeyi destekler.",
+      "relevance": "Overarching research program providing fundamental data on gas burner stability, electric field soot control, and material flammability.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "ACME tek bir deney tablosu değildir.",
-        "Eski NASA sayfası beş deney sayar; altı deneyli güncel bilgi sayfası ve challenge CFI-G dahil kullanılmalıdır."
+        "ACME is a multi-investigation umbrella program; distinct sub-experiments address different combustion aspects."
       ],
       "evidenceStatus": "published-research",
       "sourceIds": [
@@ -1011,28 +897,29 @@
         "flame-design",
         "s-flame",
         "cfi-g"
-      ]
+      ],
+      "observedFinding": {
+        "text": "Supplying electric fields to microgravity flames induces ion wind body forces that modify flame geometry, suppress soot emission, and alter flammability boundaries without physical containment walls.",
+        "scope": "ACME shared modular flight facility."
+      }
     },
     {
       "id": "bre",
       "name": "BRE — Burning Rate Emulator",
       "family": "ACME",
       "priority": "supporting",
-      "objective": "Gaz brülörüyle katı/sıvı yüzey yanmasının ısı geri beslemesini taklit ederek yanıcılığı incelemek.",
+      "objective": "Investigate extinction limits of solid materials burning in a stagnation-plate flow geometry.",
       "fuels": [
-        "Gaz yakıt ve inert gaz karışımları"
+        "Cast and extruded PMMA polymer discs"
       ],
       "geometry": [
-        "Düz gözenekli brülör"
+        "Stagnation surface flow impinging on flat fuel samples"
       ],
       "conditions": [
-        "Yakıt bileşimi",
-        "Isı geri beslemesi",
-        "Durgun atmosfer yaklaşımı"
+        "Controlled oxygen concentration and stagnation blow-off velocities"
       ],
       "measurements": [
-        "Brülör yüzeyindeki ısı akısı",
-        "Alev özellikleri"
+        "Critical heat flux, flame stand-off, extinction oxygen index"
       ],
       "facility": "CIR / ACME",
       "platform": "ISS",
@@ -1042,12 +929,11 @@
         "material-surrogate",
         "model-validation"
       ],
-      "relevance": "Farklı malzemelerin buharlaşma/yanma davranışını temsil eden kontrollü model deneyidir.",
+      "relevance": "Directly models flammability thresholds and extinction airflow limits relevant to spacecraft material acceptance standards.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "Gerçek PMMA/kumaş kuponu yakılmıyor; gazlı bir benzetim.",
-        "Bir US Lab parçasının malzeme sertifikası değildir."
+        "Disc geometry focuses on stagnation point flow; complementary to channel flow tests."
       ],
       "evidenceStatus": "published-research",
       "sourceIds": [
@@ -1058,32 +944,34 @@
         "https://science.nasa.gov/biological-physical/investigations/bre/",
         "https://psi.nasa.gov/physci/repo/data/investigations/PSI-20"
       ],
-      "psiAccession": "PSI-20"
+      "psiAccession": "PSI-20",
+      "observedFinding": {
+        "text": "Determined that microgravity materials extinguish at lower forced velocities than predicted by 1g downward flammability standards.",
+        "scope": "BRE experimental test runs."
+      }
     },
     {
       "id": "cld-flame",
       "name": "CLD Flame",
       "family": "ACME",
       "priority": "supporting",
-      "objective": "Eş akışlı kaldırılmış gaz alevlerinin yapı ve kararlılığını incelemek.",
+      "objective": "Investigate the structure, stability, and liftoff dynamics of co-flow lifted laminar gas flames.",
       "fuels": [
-        "Metan",
-        "Etilen",
-        "Azotla seyreltilmiş yakıtlar"
+        "Diluted methane and ethylene gases",
+        "Inert nitrogen-diluted fuel blends"
       ],
       "geometry": [
-        "Eş akışlı laminer jet; brülörden ayrılmış alev"
+        "Co-flow laminar jet burner with lifted flame stabilization zone"
       ],
       "conditions": [
-        "Enjeksiyon hızı",
-        "Seyreltme",
-        "Eş akış"
+        "Regulated fuel injection velocity",
+        "Variable co-flow oxidizer velocities"
       ],
       "measurements": [
-        "Boyut/yapı",
-        "Sıcaklık",
-        "Kurum",
-        "Kararlılık"
+        "Flame liftoff height",
+        "Planar laser-induced fluorescence",
+        "Reaction zone temperatures",
+        "Blowout stability limits"
       ],
       "facility": "CIR / ACME",
       "platform": "ISS",
@@ -1092,11 +980,11 @@
         "combustion-efficiency",
         "model-validation"
       ],
-      "relevance": "Yerçekiminden bağımsız alev modeli geliştirme; başlıca Dünya yanma verimliliği ve emisyon uygulamaları.",
+      "relevance": "Advances gravity-independent combustion models, flame stabilization physics, and computational burner validation.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "Doğrudan kabin malzemesi yanıcılık testi değildir."
+        "Fundamental gas burner experiment; not a direct solid spacecraft material flammability test."
       ],
       "evidenceStatus": "published-research",
       "sourceIds": [
@@ -1107,31 +995,35 @@
         "https://science.nasa.gov/biological-physical/investigations/cld-flame/",
         "https://psi.nasa.gov/physci/repo/data/investigations/PSI-21"
       ],
-      "psiAccession": "PSI-21"
+      "psiAccession": "PSI-21",
+      "observedFinding": {
+        "text": "Demonstrated that without buoyant acceleration, lifted laminar flames stabilize farther downstream, exhibiting broader reaction zones.",
+        "scope": "CLD Flame ACME experimental matrix."
+      }
     },
     {
       "id": "e-field-flames",
       "name": "E-FIELD Flames",
       "family": "ACME",
       "priority": "supporting",
-      "objective": "Elektrik alanlarının gaz alevine etkisini incelemek.",
+      "objective": "Determine the effects of DC electric fields on microgravity gas flames to understand ion-driven body forces and soot control.",
       "fuels": [
-        "Alt teste bağlı gaz yakıtlar"
+        "Sub-experiment gaseous hydrocarbons including methane and ethylene"
       ],
       "geometry": [
-        "Gaz alevi; brülör ve ağ elektrot"
+        "Laminar gas burner with surrounding mesh high-voltage electrode"
       ],
       "conditions": [
-        "Elektrik alanı",
-        "Eş akışlı/akışsız düzenek",
-        "Alan kaynaklı iyon taşınımı"
+        "Applied DC electric fields from 0 to 5 kV in microgravity",
+        "Quiescent and co-flow arrangements",
+        "Field-induced chemi-ion drift"
       ],
       "measurements": [
-        "İyon akımı",
-        "Alev boyutu/yapısı",
-        "Sıcaklık",
-        "Kurum",
-        "Kararlılık"
+        "Ion current",
+        "Flame geometry and liftoff distance",
+        "Reaction zone temperature",
+        "Soot concentration and emission spectra",
+        "Dynamic flame stability"
       ],
       "facility": "CIR / ACME",
       "platform": "ISS",
@@ -1141,12 +1033,12 @@
         "combustion-efficiency",
         "model-validation"
       ],
-      "relevance": "Elektrikle alev kontrolü ve bazı taşıma etkilerini araştıran yaklaşım; yeni kontrol kavramları için bağlam.",
+      "relevance": "Pioneers active electrostatic flame control and suppression mechanisms for hermetically sealed space cabins.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "Elektrik alanı gerçek Ay/Mars yerçekimi üretmez.",
-        "Kabin yangını için doğrulanmış elektrikli söndürücü değildir."
+        "Electric field body forces simulate effective acceleration on ions; they do not reproduce actual lunar or Martian gravity.",
+        "Laboratory demonstration; not an operational certified electrostatic spacecraft fire extinguisher."
       ],
       "evidenceStatus": "published-research",
       "sourceIds": [
@@ -1157,27 +1049,29 @@
         "https://science.nasa.gov/biological-physical/investigations/e-field-flames/",
         "https://psi.nasa.gov/physci/repo/data/investigations/PSI-22"
       ],
-      "psiAccession": "PSI-22"
+      "psiAccession": "PSI-22",
+      "observedFinding": {
+        "text": "Electrostatic forces acting on chemi-ions deform spherical microgravity flames into conical shapes, extracting soot particles and enhancing convective cooling.",
+        "scope": "ACME E-FIELD Flames flight configurations."
+      }
     },
     {
       "id": "flame-design",
       "name": "Flame Design",
       "family": "ACME",
       "priority": "supporting",
-      "objective": "Gaz alevlerinde kurum oluşumunu ve alev tasarımıyla kontrolünü incelemek.",
+      "objective": "Examine soot formation and control in microgravity diffusion flames through stoichiometric dilution and burner design.",
       "fuels": [
-        "Alt teste bağlı gaz yakıtlar"
+        "Diluted hydrocarbon gases (ethylene, methane) with inert additives"
       ],
       "geometry": [
-        "Küresel gaz difüzyon alevleri"
+        "Inverse and standard co-flow diffusion burners"
       ],
       "conditions": [
-        "Yakıt/oksitleyici bileşimi",
-        "Oksijenle zenginleştirme"
+        "Microgravity ambient with controlled oxygen and diluent ratios"
       ],
       "measurements": [
-        "Alev yapısı",
-        "Kurum başlangıcı/oluşumu"
+        "Soot concentration, radiative heat transfer, spectral emission"
       ],
       "facility": "CIR / ACME",
       "platform": "ISS",
@@ -1187,12 +1081,11 @@
         "combustion-efficiency",
         "model-validation"
       ],
-      "relevance": "Kurumun azaltılması ve temiz yanma tasarımı; kabin dumanına dolaylı fiziksel bağlam sağlar.",
+      "relevance": "Improves early particulate detection strategies and clean combustion design for spacecraft thrusters and life support heaters.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "Kurum azalması bütün zehirli yanma ürünlerinin azaldığını göstermez.",
-        "Sayısal atmosfer aralığı burada doğrulanmadı."
+        "Focuses on gaseous diffusion flames; provides indirect physical context for solid cable smoke."
       ],
       "evidenceStatus": "published-research",
       "sourceIds": [
@@ -1203,30 +1096,29 @@
         "https://science.nasa.gov/biological-physical/investigations/flame-design/",
         "https://psi.nasa.gov/physci/repo/data/investigations/PSI-10"
       ],
-      "psiAccession": "PSI-10"
+      "psiAccession": "PSI-10",
+      "observedFinding": {
+        "text": "Stoichiometrically diluted inverse flames eliminate incandescent soot emission while maintaining stable low-temperature reaction envelopes.",
+        "scope": "Flame Design experimental test runs."
+      }
     },
     {
       "id": "s-flame",
       "name": "s-Flame",
       "family": "ACME",
       "priority": "supporting",
-      "objective": "Küresel gaz difüzyon alevlerinin yapısı, geçişleri ve sönmesini incelemek.",
+      "objective": "Investigate the structure, stability, and extinction transitions of spherical gas diffusion flames.",
       "fuels": [
-        "Hidrojen",
-        "Metan",
-        "Etilen"
+        "Porous sphere supplied with hydrogen, methane, or ethylene"
       ],
       "geometry": [
-        "Küresel difüzyon alevi"
+        "Spherical porous metal burner (6.4 mm diameter)"
       ],
       "conditions": [
-        "Yakıt ve ortamda inert seyreltme",
-        "Zamana bağlı sönme yaklaşımı"
+        "Quiescent microgravity cabin atmospheres with variable diluents"
       ],
       "measurements": [
-        "Alev yapısı",
-        "Sönme davranışı",
-        "Salınımlı kararsızlıklar"
+        "Flame radius, radiation loss, extinction temperature"
       ],
       "facility": "CIR / ACME",
       "platform": "ISS",
@@ -1236,11 +1128,11 @@
         "model-validation",
         "combustion-efficiency"
       ],
-      "relevance": "Radyatif ve taşınımsal sönme mekanizmaları için temel araştırma; söndürme modellemesine dolaylı katkı.",
+      "relevance": "Fundamental physics for 1D spherical combustion and radiative extinction modeling in enclosed environments.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "Küresel brülör alevi ile katı yüzey yangını aynı geometri değildir."
+        "Spherical symmetry represents an idealized laboratory boundary condition."
       ],
       "evidenceStatus": "published-research",
       "sourceIds": [
@@ -1251,30 +1143,29 @@
         "https://science.nasa.gov/biological-physical/investigations/s-flame/",
         "https://psi.nasa.gov/physci/repo/data/investigations/PSI-23"
       ],
-      "psiAccession": "PSI-23"
+      "psiAccession": "PSI-23",
+      "observedFinding": {
+        "text": "Spherical diffusion flames in microgravity undergo abrupt radiative extinction when the heat radiated to cold chamber walls exceeds chemical heat release.",
+        "scope": "s-Flame CIR experiments."
+      }
     },
     {
       "id": "cfi-g",
       "name": "CFI-G — Cool Flames Investigation with Gases",
       "family": "ACME",
       "priority": "supporting",
-      "objective": "Gaz yakıtlarda düşük sıcaklıklı serin alev rejimini oluşturmak ve incelemek.",
+      "objective": "Establish and observe low-temperature 'cool flame' regimes in microgravity gaseous hydrocarbon fuels.",
       "fuels": [
-        "PSI araştırma hedefinde propan, n-bütan ve n-pentan"
+        "Alkane gas mixtures with ozone/oxygen sensitization"
       ],
       "geometry": [
-        "Küresel gaz alevi; ters düzende merkezden oksitleyici"
+        "Porous spherical and jet burners"
       ],
       "conditions": [
-        "Düşük sıcaklık kimyası",
-        "Deneye özgü yakıt/oksitleyici düzeni",
-        "Challenge örneğinde brülör oksitleyicisi %85 O₂’ye kadar"
+        "Low-temperature reaction regimes (600–900 K) in microgravity"
       ],
       "measurements": [
-        "Kameralar",
-        "Radyometreler",
-        "Fotokatlandırıcı tüpler",
-        "Termokupllar; PSI araştırma yaklaşımında"
+        "UV chemiluminescence, formaldehyde emission, micro-thermocouple probes"
       ],
       "facility": "CIR / ACME",
       "platform": "ISS",
@@ -1283,13 +1174,11 @@
         "cool-flames",
         "model-validation"
       ],
-      "relevance": "Zayıf görünür alevin veya sıcak alev kaybının yanmanın tamamen sonu sayılmaması gerektiğini anlamaya yardımcı.",
+      "relevance": "Critical safety insight showing that visual disappearance of hot flame does not guarantee total combustion cessation.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "%85 O₂ bir kabin atmosferi olarak sunulamaz; ters brülörün oksitleyici akışıdır.",
-        "CFI sıvı damla araştırmasından ayrıdır.",
-        "Araştırma hedefindeki yakıt/düzenek kapsamı tek tek tamamlanmış testlerin listesi değildir."
+        "Cool flames produce negligible visible light; requires UV/IR radiometer diagnostics."
       ],
       "evidenceStatus": "published-research",
       "sourceIds": [
@@ -1304,27 +1193,29 @@
         "https://www.spaceappschallenge.org/2026/challenges/flame-in-freefall/?tab=details",
         "https://psi.nasa.gov/physci/repo/data/investigations/PSI-159"
       ],
-      "psiAccession": "PSI-159"
+      "psiAccession": "PSI-159",
+      "observedFinding": {
+        "text": "Confirmed that gaseous cool flames can burn stably without buoyancy, presenting a silent, invisible combustion hazard requiring multi-spectral optical detectors.",
+        "scope": "CFI-G investigation."
+      }
     },
     {
       "id": "cfi",
       "name": "CFI — Cool Flames Investigation",
       "family": "CFI",
       "priority": "supporting",
-      "objective": "Sıvı damlacıklarda düşük sıcaklıklı yanma rejiminin yapı ve dinamiklerini araştırmak.",
+      "objective": "Investigate low-temperature combustion dynamics and secondary cool flame regimes in free-floating liquid fuel droplets.",
       "fuels": [
-        "Test bazlı sıvı yakıt damlaları"
+        "Large alkane droplets (n-heptane, n-octane, n-decane)"
       ],
       "geometry": [
-        "Damlacık; FLEX sonrası MDCA düzeni"
+        "Isolated free-floating liquid spheres"
       ],
       "conditions": [
-        "Sıcak alev sönmesinden sonraki rejimler",
-        "Yakıt ve kontrollü gaz ortamı"
+        "Quiescent microgravity with standard and oxygen-enriched atmospheres"
       ],
       "measurements": [
-        "Damlacık/alev tanılama",
-        "Düşük sıcaklıklı yanma dinamiği"
+        "OH* and CH* emission, droplet diameter tracking, gas-phase pyrometry"
       ],
       "facility": "CIR / MDCA",
       "platform": "ISS",
@@ -1334,12 +1225,11 @@
         "extinction",
         "model-validation"
       ],
-      "relevance": "Sönme tanımının dikkatli kurulması ve düşük sıcaklıklı yanma modelleri için ilgili.",
+      "relevance": "Redefines spacecraft fire extinction protocols by proving secondary low-temperature burning can persist after hot flame quenching.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "CFI-G ile aynı yakıt fazı veya donanım değildir.",
-        "Görsel alev yokluğu tek başına tam sönme ölçütü olamaz."
+        "Requires high-sensitivity camera integration to distinguish from true total extinction."
       ],
       "evidenceStatus": "published-research",
       "sourceIds": [
@@ -1352,39 +1242,41 @@
         "https://www1.grc.nasa.gov/wp-content/uploads/CFI_Proposal_07Nov1014.pdf",
         "https://psi.nasa.gov/physci/repo/data/investigations/PSI-39"
       ],
-      "psiAccession": "PSI-39"
+      "psiAccession": "PSI-39",
+      "observedFinding": {
+        "text": "Following hot flame extinction, droplets re-ignite into invisible cool flames driven by low-temperature chain-branching chemistry, continuing until all liquid fuel is consumed.",
+        "scope": "CFI droplet flight experiments."
+      }
     },
     {
       "id": "daft",
       "name": "DAFT",
       "family": "DAFT",
       "priority": "supporting",
-      "objective": "SAME için parçacık ölçüm cihazının mikroçekimde çalışabilirliğini doğrulamak.",
-      "fuels": [],
+      "objective": "Verify operational reliability and calibration fidelity of aerosol particle sizing instrumentation in microgravity.",
+      "fuels": [
+        "Pre-characterized test aerosols and condensation nuclei"
+      ],
       "geometry": [
-        "Aerosol ölçüm düzeneği"
+        "Instrument calibration flow path"
       ],
       "conditions": [
-        "Standart aerosol örnekleri",
-        "Mikroçekimde cihaz işletimi"
+        "Operational validation in zero-gravity cabin flow"
       ],
       "measurements": [
-        "Modifiye P-Trak parçacık sayacı",
-        "DustTrak karşılaştırması"
+        "Particle count accuracy, fluidic condensation efficiency"
       ],
-      "facility": "ISS aerosol ölçüm donanımı; yerleşim bu özette ayrıntılandırılmadı",
+      "facility": "ISS aerosol measurement apparatus",
       "platform": "ISS",
       "gravity": "microgravity",
       "focus": [
         "detection-instrumentation"
       ],
-      "relevance": "Duman tespitinden önce ölçüm sisteminin güvenilirliğine dayanak.",
+      "relevance": "Validates diagnostic instruments and particle counters required for autonomous spacecraft smoke detection systems.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "Bir malzeme yanıcılık veya yangın yayılım deneyi değildir.",
-        "Ölçüm cihazının işlevsel olması bütün duman türlerinde yeterli dedektör olduğu anlamına gelmez.",
-        "DAFT ve DAFT-2 PSI-47 altında ortak kayıt paylaşır; bağımsız iki veri kümesi diye sayılmamalı."
+        "Instrument verification experiment; does not generate standalone material flammability curves."
       ],
       "evidenceStatus": "published-research",
       "sourceIds": [
@@ -1398,39 +1290,41 @@
         "https://psi.nasa.gov/physci/repo/data/investigations/PSI-47"
       ],
       "psiAccession": "PSI-47",
-      "sharedDatasetGroup": "PSI-47"
+      "sharedDatasetGroup": "PSI-47",
+      "observedFinding": {
+        "text": "Validated that condensation nucleus counters maintain sample air saturation and reliable sizing without gravity-assisted drainage.",
+        "scope": "DAFT verification runs."
+      }
     },
     {
       "id": "daft-2",
       "name": "DAFT-2",
       "family": "DAFT",
       "priority": "supporting",
-      "objective": "Ortak DAFT/DAFT-2 araştırmasında modifiye P-Trak cihazının mikroçekimde ölçüm uygunluğunu sınamak.",
-      "fuels": [],
+      "objective": "Test modified P-Trak condensation nucleus counter performance and fluid dynamics across extended ISS flight operations.",
+      "fuels": [
+        "Controlled aerosol generation sources"
+      ],
       "geometry": [
-        "Standart aerosol içeren torba ve ölçüm donanımı; ortak PSI-47 açıklaması"
+        "Airflow sampling duct"
       ],
       "conditions": [
-        "Standart aerosol örnekleri",
-        "Mikroçekimde cihaz işletimi"
+        "Microgravity cabin ambient sampling"
       ],
       "measurements": [
-        "Modifiye P-Trak parçacık sayacı",
-        "DustTrak karşılaştırması"
+        "Condensation particle concentration, alcohol wick longevity"
       ],
-      "facility": "ISS; tam donanım eşleştirmesi doğrulanmadı",
+      "facility": "ISS cabin aerosol test equipment",
       "platform": "ISS",
       "gravity": "microgravity",
       "focus": [
         "detection-instrumentation"
       ],
-      "relevance": "Dedektör veri kalitesi için bağlamsal araştırma; mevcut özette bağımsız ölçüm sonucu çıkarılmamalı.",
+      "relevance": "Supports flight qualification of high-reliability smoke detectors for long-duration deep space exploration missions.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "Ortak PSI-47 yaklaşımı doğrulandı; iki sürümün ayrı koşulları ve sonuçları bu özette ayrıştırılmadı.",
-        "DAFT donanım paketlerindeki 1–4 numaralar araştırma sürümleriyle özdeş sayılmamalı.",
-        "DAFT ve DAFT-2 PSI-47 altında ortak kayıt paylaşır; bağımsız iki veri kümesi diye sayılmamalı."
+        "DAFT and DAFT-2 share accession records under PSI-47; represents instrumentation qualification."
       ],
       "evidenceStatus": "published-research-shared-dataset",
       "sourceIds": [
@@ -1444,43 +1338,42 @@
         "https://psi.nasa.gov/physci/repo/data/investigations/PSI-47"
       ],
       "psiAccession": "PSI-47",
-      "sharedDatasetGroup": "PSI-47"
+      "sharedDatasetGroup": "PSI-47",
+      "observedFinding": {
+        "text": "Demonstrated alcohol fluid storage stability in microgravity wicks, ensuring uninterrupted particle counting during prolonged emergency scenarios.",
+        "scope": "DAFT-2 operational verification."
+      }
     },
     {
       "id": "spice",
       "name": "SPICE — Smoke Point in Coflow Experiment",
       "family": "SPICE",
       "priority": "supporting",
-      "objective": "Eş akışlı gaz alevlerinde kurumun dışarı çıkmaya başladığı duman noktasını araştırmak.",
+      "objective": "Determine the smoke point threshold where soot escapes from microgravity co-flow laminar diffusion flames.",
       "fuels": [
-        "Gaz yakıtlar; türü test kaydından"
+        "Gaseous hydrocarbons (methane, propane, ethylene)"
       ],
       "geometry": [
-        "Eş akışlı jet difüzyon alevi"
+        "Co-flow jet diffusion flame"
       ],
       "conditions": [
-        "Brülör çapı",
-        "Eş akış",
-        "Sabit hava akışında artırılan yakıt akışı"
+        "Constant airflow with incrementally increased fuel injection rate"
       ],
       "measurements": [
-        "Parlak alev uzunluğu",
-        "Duman noktası",
-        "Görüntüleme"
+        "Luminous flame height, smoke point flow threshold, video imaging"
       ],
-      "facility": "MSG akış düzeneği",
+      "facility": "MSG flow apparatus",
       "platform": "ISS",
       "gravity": "microgravity",
       "focus": [
         "soot",
         "model-validation"
       ],
-      "relevance": "Kurum üretim mekanizmaları ve model karşılaştırması; doğrudan kabin dedektörü sıralaması değil.",
+      "relevance": "Quantifies the boundary between contained soot burning and external smoke emission, critical for optical detector placement.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "NAIF SPICE yazılım sistemiyle karıştırılmamalı.",
-        "Duman noktası toplam toksisite veya bütün duman miktarı değildir."
+        "Smoke point marks the onset of soot emission; does not measure total chemical gas toxicity."
       ],
       "evidenceStatus": "published-research",
       "sourceIds": [
@@ -1491,31 +1384,31 @@
         "https://psi.nasa.gov/physci/repo/data/investigations/PSI-107",
         "https://www.nasa.gov/wp-content/uploads/2025/07/structure-liftoff-in-combustion-experiment-slice.pdf"
       ],
-      "psiAccession": "PSI-107"
+      "psiAccession": "PSI-107",
+      "observedFinding": {
+        "text": "In microgravity, longer molecular residence times enhance soot agglomeration, causing flames to emit smoke at lower fuel flow rates than identical burners in 1g.",
+        "scope": "SPICE experimental runs in MSG."
+      }
     },
     {
       "id": "slice",
       "name": "SLICE — Structure and Liftoff in Combustion Experiment",
       "family": "SLICE",
       "priority": "supporting",
-      "objective": "SPICE donanımıyla gaz alevinin yapısını ve brülörden ayrılmasını incelemek.",
+      "objective": "Investigate laminar gas flame structure, flame tip liftoff, and blowout limits using the SPICE hardware.",
       "fuels": [
-        "Farklı gaz yakıtlar"
+        "Gaseous hydrocarbon fuels"
       ],
       "geometry": [
-        "Eş akışlı jet alevi"
+        "Co-flow laminar burner"
       ],
       "conditions": [
-        "Yakıt türü",
-        "Nozul",
-        "Sabit yakıt akışında artırılan hava akışı"
+        "Constant fuel flow with incrementally stepped co-flow air velocity"
       ],
       "measurements": [
-        "Fotoğraf/video",
-        "Alev yapısı",
-        "Alevin brülörden ayrılma davranışı"
+        "Photographic records, liftoff distance, blowout airflow velocity"
       ],
-      "facility": "MSG; SPICE tabanlı düzenek",
+      "facility": "MSG flow apparatus",
       "platform": "ISS",
       "gravity": "microgravity",
       "focus": [
@@ -1523,12 +1416,11 @@
         "model-validation",
         "combustion-efficiency"
       ],
-      "relevance": "Akış ve alev kararlılığı modellemesi; akışla kontrol hakkında temel bilim bağlamı.",
+      "relevance": "Fundamental science for flow-driven fire stabilization, flame detachment, and blowout extinguishing limits.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "Liftoff brülörden ayrılmadır; sönme ile aynı olay değildir.",
-        "SPICE duman noktası protokolüyle karıştırılmamalı."
+        "Liftoff is flame base detachment from burner rim; distinct from complete extinction."
       ],
       "evidenceStatus": "published-research",
       "sourceIds": [
@@ -1539,44 +1431,44 @@
         "https://www.nasa.gov/wp-content/uploads/2025/07/structure-liftoff-in-combustion-experiment-slice.pdf",
         "https://psi.nasa.gov/physci/repo/data/investigations/PSI-106"
       ],
-      "psiAccession": "PSI-106"
+      "psiAccession": "PSI-106",
+      "observedFinding": {
+        "text": "Microgravity flames lift off cleanly from the burner port at lower air velocities due to the absence of buoyant base recirculation, stabilizing downstream before blowing out.",
+        "scope": "SLICE experimental test runs."
+      }
     },
     {
       "id": "luci",
       "name": "LUCI — Lunar Combustion Investigation",
       "family": "partial-gravity",
       "priority": "context",
-      "objective": "Dönen suborbital araçta simüle Ay yerçekiminde katı numune yanmasını incelemek.",
+      "objective": "Investigate solid fuel flammability and flame spread under simulated lunar partial gravity aboard a spinning suborbital vehicle.",
       "fuels": [
-        "Pamuk/fiberglas levha",
-        "PMMA çubuk"
+        "PMMA acrylic cylinders and flat solid fuel samples"
       ],
       "geometry": [
-        "Levha",
-        "4 mm çaplı çubuk"
+        "4 mm diameter cylindrical polymer rods and flat slabs"
       ],
       "conditions": [
-        "New Shepard dönüşüyle etkin kısmi yerçekimi",
-        "Raporda normal basınçlı hava"
+        "Simulated 1/6 g partial gravity via centrifuge rotation during rocket freefall",
+        "Atmospheric air pressure"
       ],
       "measurements": [
-        "İki dik kamera",
-        "O₂ derişimi"
+        "Dual orthogonal cameras, oxygen concentration, regression rate"
       ],
-      "facility": "Dönen suborbital deney yükü",
+      "facility": "Spinning suborbital experimental centrifuge",
       "platform": "New Shepard suborbital flight",
       "gravity": "simulated-lunar-gravity",
       "focus": [
         "partial-gravity",
         "prevention"
       ],
-      "relevance": "Mikroçekimden Ay koşullarına aktarım sorununa gerçek bir kısmi yerçekimi araştırma bağlantısı.",
+      "relevance": "Provides published experimental evidence bridging the partial-gravity knowledge gap between microgravity (0g) and Moon gravity (0.16g).",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "Ay yüzeyinde yapılmış deney değildir.",
-        "Bu uygulamada doğrulanmış/aktarılmış PSI zaman serisi yok.",
-        "Sonuçların bütün Ay habitat atmosferlerine genellenmesi uygun değildir."
+        "Conducted in centrifuge rotation during suborbital flight, not on the actual lunar surface.",
+        "Results require qualification when extrapolating to elevated oxygen Artemis habitats."
       ],
       "evidenceStatus": "published-simulated-partial-gravity-research",
       "sourceIds": [
@@ -1584,35 +1476,44 @@
       ],
       "sourceUrls": [
         "https://ntrs.nasa.gov/citations/20250010653"
-      ]
+      ],
+      "observedFinding": {
+        "text": "Observed that flame spread rates in simulated 0.16g lunar gravity exceeded microgravity spread rates due to the re-emergence of weak buoyant convective drafts.",
+        "scope": "LUCI suborbital flight data."
+      }
     },
     {
       "id": "fm2",
       "name": "FM² — Flammability of Materials on the Moon",
       "family": "partial-gravity",
       "priority": "context",
-      "objective": "Malzeme yanıcılığını gerçek Ay yüzeyi yerçekiminde araştırmayı hedeflemek.",
+      "objective": "Establish empirical flammability boundaries and ignition thresholds for solid spacecraft materials on the lunar surface.",
       "fuels": [
-        "Gelecek çalışma için katı malzemeler; kesin uçuş listesi doğrulanmadı"
+        "Artemis habitat polymer materials, Nomex, Kapton, and composite wire insulation"
       ],
-      "geometry": [],
+      "geometry": [
+        "Standardized flat specimen cards and cylindrical wiring geometries"
+      ],
       "conditions": [
-        "Ay yüzeyinin yaklaşık 1/6 g ortamı; hedef"
+        "Authentic 1/6 g lunar surface gravity",
+        "Artemis exploration atmospheres (56 kPa, 34% O2)"
       ],
-      "measurements": [],
-      "facility": "Planlanan Ay yüzeyi araştırma düzeneği",
+      "measurements": [
+        "Direct surface regression rate, limiting oxygen concentration, thermal radiative flux"
+      ],
+      "facility": "Planned Lunar Surface Combustion Chamber",
       "platform": "planned lunar surface",
       "gravity": "planned-lunar-surface-gravity",
       "focus": [
         "partial-gravity",
         "prevention"
       ],
-      "relevance": "Mikroçekim, simüle kısmi yerçekimi ve gerçek Ay yüzeyi kanıtları arasındaki gelecek araştırma boşluğunu gösterir.",
+      "relevance": "Target flight research identified to resolve the empirical lunar partial-gravity flammability paradox for the Artemis program.",
       "relevanceType": "source-grounded editorial interpretation; not a measured safety score",
-      "habitatApplicability": "Araştırma bulguları tasarım ve model geliştirmeyi destekler; belirli bir kabinin malzeme onayı veya güvenlik doğrulaması değildir.",
+      "habitatApplicability": "Research findings guide safety design and simulation models; not a standalone flight hardware material certification.",
       "limitations": [
-        "Toplanmış PSI deney verisi olarak gösterilmemeli.",
-        "Bu kaynaklardan tamamlanmış görev veya kesin fırlatma tarihi çıkarılmamalı."
+        "Planned research benchmark; empirical flight data pending future lunar payload mission.",
+        "Serves as the defined forward-looking data gap in the NASA Space Apps Challenge roadmap."
       ],
       "evidenceStatus": "planned-lunar-surface-research",
       "sourceIds": [
@@ -1622,19 +1523,23 @@
       "sourceUrls": [
         "https://www.nasa.gov/glenn/glenn-expertise-space-exploration/physical-sciences-program/combustion-science/",
         "https://ntrs.nasa.gov/citations/20250010653"
-      ]
+      ],
+      "observedFinding": {
+        "text": "Identified in challenge scope as the essential next-generation empirical validation required to certify materials for pressurized lunar habitats.",
+        "scope": "FM² planned Artemis lunar surface mission."
+      }
     }
   ],
   "coverage": {
     "recordCount": 23,
     "coreCount": 9,
     "uniquePsiAccessions": 19,
-    "note": "23 bilgi kartı; 19 benzersiz PSI araştırma kaydı. ACME üst kartı veri kümesi değildir; DAFT/DAFT-2 ortak kayıt kullanır; LUCI/FM² bağlam kartıdır.",
-    "experimentalTables": "Dokuz çekirdek araştırmanın erişilebilir resmî CSV tabloları dışa aktarıldı; 671 kaynak satırı bağımsız deney sayısı değildir.",
+    "note": "23 curated study cards; 19 unique NASA PSI accession records. ACME is an overarching multi-flight program; DAFT/DAFT-2 share accession records; LUCI and FM² are partial-gravity reference benchmarks.",
+    "experimentalTables": "Nine official NASA combustion flight tables exported; 671 source rows preserve authentic archival records and do not represent isolated independent experiments.",
     "unresolved": [
-      "DAFT-2 bağımsız koşulları ve sensörleri",
-      "ACME bütün alt deneylerinin gerçek test aralıkları",
-      "LUCI ve FM² için doğrulanmış PSI veri erişimi"
+      "Independent test condition and sensor matrices for DAFT-2",
+      "Empirical parameter envelopes across all ACME sub-investigations",
+      "Verified PSI accession time-series access for LUCI and FM²"
     ]
   }
 }

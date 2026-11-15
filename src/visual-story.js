@@ -13,6 +13,7 @@ export function createVisualStory(container, { onOpenLab, onOpenData, onOpenStud
   container.innerHTML = `
     <div class="story-container">
       <header class="story-header">
+        <canvas id="hero-fire-canvas" class="hero-fire-canvas" aria-hidden="true"></canvas>
         <span class="story-kicker">CINEMATIC SCIENTIFIC STORY</span>
         <h1>From Teardrop to Blue Sphere</h1>
         <p>
@@ -46,6 +47,84 @@ export function createVisualStory(container, { onOpenLab, onOpenData, onOpenStud
   `;
 
   const bodyEl = container.querySelector('#story-chapter-body');
+
+  // --- HERO AMBIENT FIRE CANVAS ---
+  let heroAnimId = null;
+  const heroCanvas = container.querySelector('#hero-fire-canvas');
+  if (heroCanvas) {
+    const particles = [];
+    const PARTICLE_COUNT = 35;
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      particles.push({
+        x: Math.random(),
+        y: Math.random(),
+        vx: (Math.random() - 0.5) * 0.0003,
+        vy: -0.0002 - Math.random() * 0.0004,
+        r: 1.5 + Math.random() * 2.5,
+        life: Math.random(),
+        hue: Math.random() > 0.45 ? 'amber' : 'blue'
+      });
+    }
+
+    function drawHeroFire(time) {
+      const rect = heroCanvas.getBoundingClientRect();
+      if (rect.width < 1 || rect.height < 1) { heroAnimId = requestAnimationFrame(drawHeroFire); return; }
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      heroCanvas.width = rect.width * dpr;
+      heroCanvas.height = rect.height * dpr;
+      const ctx = heroCanvas.getContext('2d');
+      ctx.scale(dpr, dpr);
+      const w = rect.width;
+      const h = rect.height;
+      ctx.clearRect(0, 0, w, h);
+
+      // Radial heat wisps
+      const t = time * 0.0004;
+      for (let i = 0; i < 4; i++) {
+        const cx = w * (0.2 + 0.6 * ((Math.sin(t + i * 1.7) + 1) / 2));
+        const cy = h * (0.3 + 0.4 * ((Math.cos(t * 0.7 + i * 2.3) + 1) / 2));
+        const radius = Math.max(w, h) * (0.18 + 0.08 * Math.sin(t * 0.5 + i));
+        const isAmber = i % 2 === 0;
+        const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius);
+        if (isAmber) {
+          grad.addColorStop(0, 'rgba(217, 119, 6, 0.10)');
+          grad.addColorStop(1, 'rgba(217, 119, 6, 0)');
+        } else {
+          grad.addColorStop(0, 'rgba(2, 132, 199, 0.08)');
+          grad.addColorStop(1, 'rgba(2, 132, 199, 0)');
+        }
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // Micro-ember particles
+      for (const p of particles) {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.life -= 0.0015;
+        if (p.life <= 0 || p.y < -0.05 || p.x < -0.05 || p.x > 1.05) {
+          p.x = 0.15 + Math.random() * 0.7;
+          p.y = 0.7 + Math.random() * 0.35;
+          p.life = 0.6 + Math.random() * 0.4;
+          p.vx = (Math.random() - 0.5) * 0.0003;
+          p.vy = -0.0002 - Math.random() * 0.0004;
+          p.hue = Math.random() > 0.45 ? 'amber' : 'blue';
+        }
+        const alpha = Math.min(p.life, 0.35) * 0.55;
+        ctx.fillStyle = p.hue === 'amber'
+          ? `rgba(217, 119, 6, ${alpha})`
+          : `rgba(2, 132, 199, ${alpha})`;
+        ctx.beginPath();
+        ctx.arc(p.x * w, p.y * h, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      heroAnimId = requestAnimationFrame(drawHeroFire);
+    }
+    heroAnimId = requestAnimationFrame(drawHeroFire);
+  }
 
   function renderChapter() {
     if (animId) {
@@ -88,9 +167,9 @@ export function createVisualStory(container, { onOpenLab, onOpenData, onOpenStud
           In microgravity (g ≈ 0), buoyancy vanishes. Molecular diffusion alone feeds the flame, forming a spherical, soot-free blue halo.
         </p>
 
-        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--space-border); border-radius: 12px; padding: 20px; margin-bottom: 24px;">
+        <div style="background: #FFFFFF; border: 1px solid var(--space-border); border-radius: 12px; padding: 20px; margin-bottom: 24px; box-shadow: var(--space-shadow);">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-            <label style="font-family: var(--font-mono); font-size: 12px; color: var(--telemetry-cyan); text-transform: uppercase;">
+            <label style="font-family: var(--font-mono); font-size: 12px; color: var(--telemetry-cyan); font-weight: 700; text-transform: uppercase;">
               Interactive Gravity Morph: <span id="grav-morph-val">${gravitySliderVal.toFixed(2)} g</span>
             </label>
             <div style="display: flex; gap: 8px;">
@@ -142,7 +221,7 @@ export function createVisualStory(container, { onOpenLab, onOpenData, onOpenStud
           <div style="font-size: 13px; color: var(--space-text-secondary);">
             Primary Reference: <strong>NASA Glenn Research Center — Physical Sciences Informatics (PSI-69 FLEX & PSI-25 BASS)</strong>
           </div>
-          <button class="primary" id="btn-to-ch2" style="background: var(--telemetry-cyan); color: #070b14; font-weight: 600; padding: 10px 20px; border-radius: 6px; cursor: pointer; border: none;">
+          <button class="primary" id="btn-to-ch2" style="background: var(--telemetry-cyan); color: #FFFFFF; font-weight: 600; padding: 10px 20px; border-radius: 6px; cursor: pointer; border: none;">
             Next Chapter: The Lunar Habitat Paradox →
           </button>
         </div>
@@ -425,16 +504,16 @@ export function createVisualStory(container, { onOpenLab, onOpenData, onOpenStud
             <p>
               When pressure is lowered to 56 kPa and O₂ elevated to 34%, the <em>Limiting Oxygen Concentration (LOC)</em> drops precipitously. Materials certified as "self-extinguishing" on the ISS can burn continuously on the Lunar surface.
             </p>
-            <div style="background: rgba(0,0,0,0.4); border-radius: 6px; padding: 10px; font-family: var(--font-mono); font-size: 11px; color: var(--telemetry-cyan);">
+            <div style="background: var(--space-bg); border: 1px solid var(--space-border); border-radius: 6px; padding: 12px; font-family: var(--font-mono); font-size: 11px; color: var(--space-text-primary);">
               <div>ΔLOC Margin at 34% O₂: <strong style="color: #ef4444;">+12.4% (EXTREME HAZARD)</strong></div>
-              <div>Artemis EVA Suit Pre-breathe: <strong>20 min (vs 240 min on ISS)</strong></div>
+              <div>Artemis EVA Suit Pre-breathe: <strong style="color: var(--telemetry-cyan);">20 min (vs 240 min on ISS)</strong></div>
             </div>
           </div>
         </div>
 
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--space-border);">
           <button class="secondary" id="btn-back-ch1">← Back to Chapter 1</button>
-          <button class="primary" id="btn-to-ch3" style="background: var(--telemetry-cyan); color: #070b14; font-weight: 600; padding: 10px 20px; border-radius: 6px; cursor: pointer; border: none;">
+          <button class="primary" id="btn-to-ch3" style="background: var(--telemetry-cyan); color: #FFFFFF; font-weight: 600; padding: 10px 20px; border-radius: 6px; cursor: pointer; border: none;">
             Next Chapter: Hidden Space Hazards →
           </button>
         </div>
@@ -526,12 +605,12 @@ export function createVisualStory(container, { onOpenLab, onOpenData, onOpenStud
           </div>
 
           <!-- Active Hotspot Deep Dive Panel -->
-          <div style="background: rgba(13, 22, 38, 0.95); border: 1px solid var(--space-border); border-radius: 12px; padding: 28px; margin-top: 24px;">
+          <div style="background: #FFFFFF; border: 1px solid var(--space-border); border-radius: 12px; padding: 28px; margin-top: 24px; box-shadow: var(--space-shadow);">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
               <span class="telemetry-badge badge-psi">${data.psi}</span>
-              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--telemetry-cyan);">DETAILED FAILURE ARCHITECTURE</span>
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--telemetry-cyan); font-weight: 700;">DETAILED FAILURE ARCHITECTURE</span>
             </div>
-            <h3 style="font-size: 22px; color: #fff; margin: 0 0 12px;">${data.title}</h3>
+            <h3 style="font-size: 22px; color: var(--space-text-primary); margin: 0 0 12px;">${data.title}</h3>
             <p style="font-size: 14px; line-height: 1.8; color: var(--space-text-secondary); margin: 0 0 20px;">
               ${data.text}
             </p>
@@ -542,7 +621,7 @@ export function createVisualStory(container, { onOpenLab, onOpenData, onOpenStud
 
           <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--space-border);">
             <button class="secondary" id="btn-back-ch2">← Back to Chapter 2</button>
-            <button class="primary" id="btn-to-ch4" style="background: var(--telemetry-cyan); color: #070b14; font-weight: 600; padding: 10px 20px; border-radius: 6px; cursor: pointer; border: none;">
+            <button class="primary" id="btn-to-ch4" style="background: var(--telemetry-cyan); color: #FFFFFF; font-weight: 600; padding: 10px 20px; border-radius: 6px; cursor: pointer; border: none;">
               Next Chapter: 12 TB PSI Data to Action →
             </button>
           </div>
@@ -617,14 +696,14 @@ export function createVisualStory(container, { onOpenLab, onOpenData, onOpenStud
         </div>
 
         <!-- Interactive Next Steps / Action Banner -->
-        <div style="background: linear-gradient(135deg, rgba(34,211,238,0.1), rgba(56,189,248,0.05)); border: 1px solid var(--space-border-glow); border-radius: 12px; padding: 28px; text-align: center; margin-top: 30px;">
-          <h3 style="font-size: 22px; color: #fff; margin: 0 0 10px;">Experience the Engineering Workbench</h3>
+        <div style="background: #FFFFFF; border: 1px solid var(--space-border); border-radius: 12px; padding: 28px; text-align: center; margin-top: 30px; box-shadow: var(--space-shadow);">
+          <h3 style="font-size: 22px; color: var(--space-text-primary); margin: 0 0 10px;">Experience the Engineering Workbench</h3>
           <p style="font-size: 14px; color: var(--space-text-secondary); max-width: 680px; margin: 0 auto 20px;">
             Transition from narrative to hands-on analysis. Test custom oxygen and pressure regimes inside the 
             <strong>Interactive Flame Lab</strong>, or query the <strong>AI Safety Analyst</strong> with inline citations.
           </p>
           <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
-            <button class="primary" id="btn-launch-flame-lab" style="background: var(--telemetry-cyan); color: #070b14; font-weight: 700; padding: 12px 24px; border-radius: 8px; cursor: pointer; border: none;">
+            <button class="primary" id="btn-launch-flame-lab" style="background: var(--telemetry-cyan); color: #FFFFFF; font-weight: 700; padding: 12px 24px; border-radius: 8px; cursor: pointer; border: none;">
               ⚡ Launch Interactive Flame Lab
             </button>
             <button class="secondary" id="btn-launch-mission-ranker" style="border-color: var(--telemetry-blue); color: var(--telemetry-blue); padding: 12px 24px;">
@@ -666,6 +745,10 @@ export function createVisualStory(container, { onOpenLab, onOpenData, onOpenStud
       if (animId) {
         cancelAnimationFrame(animId);
         animId = null;
+      }
+      if (heroAnimId) {
+        cancelAnimationFrame(heroAnimId);
+        heroAnimId = null;
       }
     },
     goToChapter(num) {

@@ -97,14 +97,14 @@ export function createEarthSpinOffs(container, { onOpenData } = {}) {
         </div>
 
         <!-- Main Showcase Card -->
-        <article class="telemetry-panel" style="padding: 36px;">
+        <article class="telemetry-panel" style="padding: 36px; background: #FFFFFF; border: 1px solid var(--space-border); border-radius: 12px; box-shadow: var(--space-shadow);">
           <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; margin-bottom: 20px; flex-wrap: wrap;">
             <div>
               <span class="telemetry-badge badge-ntrs">${item.spinoffCitation}</span>
-              <h2 style="font-family: var(--font-display); font-size: 28px; margin: 10px 0 4px; color: #fff;">
+              <h2 style="font-family: var(--font-display); font-size: 28px; margin: 10px 0 4px; color: var(--space-text-primary);">
                 ${item.title}
               </h2>
-              <span style="font-family: var(--font-mono); font-size: 12px; color: var(--telemetry-cyan);">
+              <span style="font-family: var(--font-mono); font-size: 12px; color: var(--telemetry-cyan); font-weight: 600;">
                 ${item.subtitle}
               </span>
             </div>
@@ -115,11 +115,11 @@ export function createEarthSpinOffs(container, { onOpenData } = {}) {
 
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 26px 0;">
             ${item.keyMetrics.map(m => `
-              <div style="background: rgba(11, 19, 37, 0.85); border: 1px solid var(--space-border); border-radius: 10px; padding: 18px; text-align: center;">
-                <span style="font-family: var(--font-mono); font-size: 10px; color: var(--space-text-muted); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 6px;">
+              <div style="background: var(--space-bg); border: 1px solid var(--space-border); border-radius: 10px; padding: 18px; text-align: center; box-shadow: 0 1px 3px rgba(30, 36, 33, 0.04);">
+                <span style="font-family: var(--font-mono); font-size: 10px; color: var(--space-text-muted); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 6px; font-weight: 600;">
                   ${m.label}
                 </span>
-                <strong style="font-family: var(--font-mono); font-size: 26px; color: var(--telemetry-cyan);">
+                <strong style="font-family: var(--font-mono); font-size: 26px; color: var(--telemetry-cyan); font-weight: 700;">
                   ${m.val}
                 </strong>
               </div>
@@ -127,8 +127,8 @@ export function createEarthSpinOffs(container, { onOpenData } = {}) {
           </div>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0;">
-            <div style="background: rgba(11, 19, 37, 0.6); border: 1px solid var(--space-border); border-radius: 10px; padding: 20px;">
-              <strong style="font-family: var(--font-mono); font-size: 11px; color: var(--telemetry-amber); text-transform: uppercase; display: block; margin-bottom: 8px;">
+            <div style="background: #FFFFFF; border: 1px solid var(--space-border); border-left: 4px solid var(--telemetry-amber); border-radius: 10px; padding: 20px; box-shadow: 0 1px 4px rgba(30, 36, 33, 0.04);">
+              <strong style="font-family: var(--font-mono); font-size: 11px; color: var(--telemetry-amber); text-transform: uppercase; display: block; margin-bottom: 8px; font-weight: 700; letter-spacing: 0.5px;">
                 🚀 NASA Mission Origin
               </strong>
               <p style="font-size: 13px; line-height: 1.6; color: var(--space-text-secondary); margin: 0;">
@@ -136,8 +136,8 @@ export function createEarthSpinOffs(container, { onOpenData } = {}) {
               </p>
             </div>
 
-            <div style="background: rgba(11, 19, 37, 0.6); border: 1px solid var(--space-border); border-radius: 10px; padding: 20px;">
-              <strong style="font-family: var(--font-mono); font-size: 11px; color: #10b981; text-transform: uppercase; display: block; margin-bottom: 8px;">
+            <div style="background: #FFFFFF; border: 1px solid var(--space-border); border-left: 4px solid #059669; border-radius: 10px; padding: 20px; box-shadow: 0 1px 4px rgba(30, 36, 33, 0.04);">
+              <strong style="font-family: var(--font-mono); font-size: 11px; color: #059669; text-transform: uppercase; display: block; margin-bottom: 8px; font-weight: 700; letter-spacing: 0.5px;">
                 🌍 Terrestrial Impact & Applications
               </strong>
               <p style="font-size: 13px; line-height: 1.6; color: var(--space-text-secondary); margin: 0;">

@@ -35,7 +35,7 @@ test('coverage and untouched source checksums match packaged metadata',()=>{
 test('exports retain provenance, qualifiers and safe spreadsheet cells',()=>{
  const csv=exportRows(flex,flex.records.slice(0,2));assert(csv.includes('source_accession'));assert(csv.includes('burnTimeS__qualifier'));assert(csv.includes('"PSI-69","2","test-record"'));
  assert.equal(csvCell('=HYPERLINK("x")'),'"\'=HYPERLINK(""x"")"');assert.equal(csvCell(-1.2),'"-1.2"');
- const summary=comparisonSummary(knowledge.investigations.filter(s=>['same','same-r'].includes(s.id)));assert(summary.shared.includes('Duman algılama'));
+ const summary=comparisonSummary(knowledge.investigations.filter(s=>['same','same-r'].includes(s.id)));assert(summary.shared.includes('Smoke Detection'));
 });
 test('FLEX source headings remain intact while scientific corrections are cited',()=>{
  const burning=flex.fields.find(f=>f.key==='burningRateSourceUnit');assert.equal(burning.sourceHeader,'Burning rate; mm');assert.equal(burning.unit,'mm²/s');assert(burning.corroboration.url.includes('20150023456'));
