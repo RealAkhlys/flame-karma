@@ -1,0 +1,19 @@
+{
+  "name": "us-lab-explorer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check:data": "node scripts/check-data.mjs",
+    "check": "npm run check:data && npm test",
+    "build": "npm run check && esbuild src/main.js --bundle --minify --format=esm --outfile=dist/app.js",
+    "dev": "node server.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "three": "0.181.2"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
+  }
+}

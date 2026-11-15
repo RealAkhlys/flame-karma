@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#070b14">
+  <title>Flame in Freefall — AI-Powered Microgravity Fire Safety</title>
+  <meta name="description" content="NASA Space Apps Challenge 2026: Flame in Freefall. Explore microgravity combustion physics, Artemis lunar flammability paradoxes, real-time telemetry simulations, and grounded safety protocols.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23070b14'/%3E%3Ccircle cx='20' cy='20' r='10' fill='none' stroke='%2322d3ee' stroke-width='2'/%3E%3Cellipse cx='20' cy='20' rx='17' ry='6' transform='rotate(-35 20 20)' fill='none' stroke='%2338bdf8' stroke-width='2'/%3E%3C/svg%3E">
+  
+  <!-- Aerospace Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./fire.css">
+  <link rel="stylesheet" href="./workspace.css">
+  <link rel="stylesheet" href="./research.css">
+  <link rel="stylesheet" href="./insights.css">
+  <link rel="stylesheet" href="./simulator.css">
+  <link rel="stylesheet" href="./telemetry-theme.css">
+  <link rel="stylesheet" href="./story.css">
+  <link rel="stylesheet" href="./flame-lab.css">
+  <link rel="stylesheet" href="./pitch.css">
+</head>
+<body class="telemetry-dark">
+<main id="app">
+ <div id="viewport" aria-label="Interactive US Lab Destiny interior"></div>
+ <div class="vignette" aria-hidden="true"></div>
+
+ <header class="topbar">
+  <a class="brand" href="./" aria-label="Orbital Telemetry home">
+    <svg viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="20" cy="20" r="11"/>
+      <ellipse cx="20" cy="20" rx="18" ry="7" transform="rotate(-35 20 20)"/>
+      <circle cx="32" cy="10" r="2" class="satellite"/>
+    </svg>
+    <span>ORBITAL<span class="brand-sub">TELEMETRY</span></span>
+  </a>
+
+  <nav class="mode-nav" aria-label="Navigation Modules">
+   <button id="story-nav-btn" class="active" aria-pressed="true">Visual Story</button>
+   <button id="flame-lab-nav-btn" aria-pressed="false">Flame Lab</button>
+   <button id="lab-button" aria-pressed="false">US Lab 3D Sim</button>
+   <button id="research-button" aria-pressed="false">Mission & Data</button>
+   <button id="safety-nav-btn" aria-pressed="false">AI Safety Analyst</button>
+   <button id="spinoff-nav-btn" aria-pressed="false">Spin-Offs</button>
+  </nav>
+
+  <nav class="top-actions" aria-label="View Controls">
+   <button id="pitch-button" class="pitch-mode-btn" title="Launch Presentation Pitch Mode [P]">
+     <span class="pulse-dot"></span> PITCH MODE [P]
+   </button>
+   <button class="icon-button" id="info-button" title="Model & Mission Info" aria-label="Model Info"><span data-icon="info"></span></button>
+   <button class="icon-button" id="help-button" title="Navigation Controls" aria-label="Controls"><span data-icon="help"></span></button>
+   <button class="icon-button" id="fullscreen-button" title="Fullscreen" aria-label="Fullscreen"><span data-icon="expand"></span></button>
+  </nav>
+ </header>
+
+ <!-- Active Dynamic Module Viewport (Story / Flame Lab / Mission & Data / Safety Analyst / Spin-Offs) -->
+ <section id="active-module-view" class="module-container"></section>
+
+ <section id="loading" aria-live="polite">
+   <div class="loader-orbit"><span></span></div>
+   <p class="eyebrow">NASA 3D ARCHIVE</p>
+   <h1>Preparing US Lab Destiny.</h1>
+   <p id="load-status">Loading module geometry and textures</p>
+   <div class="progress-track"><div id="load-progress"></div></div>
+   <span class="micro">Geometry · PBR Textures · Sensor Rig</span>
+   <button id="retry-button" class="primary" hidden>Retry Connection</button>
+ </section>
+
+ <section id="welcome" class="welcome" hidden>
+  <div class="eyebrow"><span class="small-line"></span> INTERNATIONAL SPACE STATION</div>
+  <h1>Explore the Space.<br><em>Observe the Fire.</em></h1>
+  <p>Walk inside the Destiny US Lab. Study real NASA combustion experiments, sensor telemetry, and fuel materials in 3D microgravity.</p>
+  <button id="enter-button" class="primary">Enter 3D Laboratory <span data-icon="arrow"></span></button>
+  <button id="welcome-research" class="secondary">Open Mission & Data →</button>
+  <div class="welcome-note"><span data-icon="cube"></span> Official NASA 3D Model <span>·</span> US Lab Destiny</div>
+ </section>
+
+ <aside id="route" class="route surface" hidden aria-label="Discovery Route">
+  <div class="panel-kicker"><span>DISCOVERY ROUTE</span><span id="visited-count">0 / 5</span></div>
+  <h2>Module Landmarks</h2><p class="muted">Select a checkpoint to inspect hardware.</p>
+  <div id="route-stops"></div>
+  <button id="inventory-button" class="text-button"><span data-icon="layers"></span> All Hardware Parts <span id="part-count">66</span><span data-icon="arrow"></span></button>
+ </aside>
+
+ <aside id="inventory" class="inventory surface" hidden aria-label="Hardware Parts Inventory">
+  <div class="panel-heading"><div><div class="eyebrow">US LAB DESTINY</div><h2>Hardware Inventory</h2></div><button id="inventory-close" class="icon-button" aria-label="Close inventory"><span data-icon="close"></span></button></div>
+  <label class="search"><span data-icon="search"></span><input id="part-search" type="search" placeholder="Search equipment or rack…" autocomplete="off" aria-label="Search part"></label>
+  <div class="filter-chips" id="filters"><button data-filter="all" aria-pressed="true">All</button><button data-filter="equipment" aria-pressed="false">Equipment</button><button data-filter="structure" aria-pressed="false">Structure</button></div>
+  <div id="parts-list" class="parts-list"></div>
+  <p class="inventory-footer" id="search-count"></p>
+ </aside>
+
+ <aside id="detail" class="detail surface" hidden aria-label="Selected Hardware Detail">
+  <div class="panel-heading"><div><div class="eyebrow"><span class="selection-dot"></span> SELECTED PART</div><button id="detail-close" class="icon-button" aria-label="Close detail"><span data-icon="close"></span></button></div></div>
+  <div class="part-illustration"><span id="detail-icon" data-icon="cube"></span><span id="detail-number">01</span></div>
+  <span id="detail-category" class="category-label"></span>
+  <h2 id="detail-title"></h2>
+  <p id="detail-description"></p>
+  <dl class="part-facts">
+    <div><dt>Location</dt><dd>Destiny · US Lab</dd></div>
+    <div><dt>Material Composition</dt><dd>Not specified in visual mesh</dd></div>
+    <div><dt>Model Provenance</dt><dd>NASA / JSC / IGOAL</dd></div>
+  </dl>
+  <div class="material-context">
+    <span class="eyebrow">COMBUSTION RESEARCH</span>
+    <p id="detail-research-label"></p>
+    <button id="detail-research" class="secondary">Explore Linked Studies →</button>
+    <p class="caption">Research association does not imply flammability endorsement for this specific flight hardware.</p>
+  </div>
+  <button id="focus-button" class="primary"><span data-icon="focus"></span> Focus View</button>
+  <button id="detail-placement" class="secondary">Place Sample at this Rack</button>
+  <details class="source-detail">
+    <summary>View Model Archive Tag</summary>
+    <code id="detail-source"></code>
+    <p>This mesh represents visual layout geometry; hardware physical composition is not specified.</p>
+  </details>
+ </aside>
+
+ <div id="hover-label" class="hover-label" hidden><span class="hover-dot"></span><span id="hover-text"></span><kbd>SELECT</kbd></div>
+ <div id="selection-pin" class="selection-pin" hidden aria-hidden="true"><span></span></div>
+ <div id="toast" class="toast" role="status" hidden></div>
+ <div id="explore-hint" class="explore-hint" hidden><span data-icon="hand"></span><span>Drag to rotate · WASD / QE to fly · Click part or rack to inspect</span></div>
+
+ <footer id="hud" class="hud" hidden>
+  <div class="position-card surface">
+    <div class="position-top"><span class="eyebrow">MODULE POSITION</span><span id="position-label">Center</span></div>
+    <div class="module-map"><span class="map-hatch"></span><div class="map-racks top"></div><div class="map-racks bottom"></div><div id="map-marker"><span></span></div><span class="map-hatch end"></span></div>
+    <div class="map-labels"><span>AFT</span><span>US LAB</span><span>FWD</span></div>
+  </div>
+  <div class="movement-bar surface">
+    <button id="home-button" class="icon-button" aria-label="Reset View" title="Reset View (R)"><span data-icon="home"></span></button>
+    <div class="divider"></div>
+    <div class="move-keys">
+      <button data-move="left" aria-label="Strafe Left" title="Left · A"><span data-icon="left"></span></button>
+      <button data-move="back" aria-label="Move Back" title="Back · S"><span data-icon="down"></span></button>
+      <button data-move="forward" aria-label="Move Forward" title="Forward · W"><span data-icon="up"></span></button>
+      <button data-move="right" aria-label="Strafe Right" title="Right · D"><span data-icon="right"></span></button>
+    </div>
+    <div class="divider"></div>
+    <div class="move-keys vertical-keys">
+      <button data-move="down" aria-label="Descend" title="Descend · Q">−</button>
+      <button data-move="up" aria-label="Ascend" title="Ascend · E">+</button>
+    </div>
+    <div class="divider"></div>
+    <button id="free-roam-toggle" class="secondary free-roam-btn" title="Toggle between Combustion Chamber and Free Walkthrough Mode">
+      <span data-icon="cube"></span> Free Walk Mode
+    </button>
+    <span class="movement-caption">CONTROLS</span>
+  </div>
+  <div class="view-actions surface">
+    <button id="route-button" aria-label="Toggle Route Panel" aria-pressed="true"><span data-icon="route"></span><span>Route</span></button>
+    <button id="quality-button" title="Toggle Graphics Quality"><span data-icon="spark"></span><span id="quality-label">High</span></button>
+  </div>
+ </footer>
+
+ <div id="attribution" class="attribution">NASA / JSC / IGOAL <span>·</span> 3D INTERIOR COMBUSTION SIMULATION</div>
+
+ <dialog id="help-dialog">
+  <form method="dialog"><button class="icon-button modal-close" aria-label="Close controls"><span data-icon="close"></span></button></form>
+  <div class="eyebrow">FLIGHT & SIMULATION GUIDE</div>
+  <h2>Zero-g Navigation.<br>Command is Yours.</h2>
+  <div class="instructions">
+    <div><span data-icon="hand"></span><p><strong>Look Around</strong>Click and drag inside the viewport to pitch and yaw.</p></div>
+    <div><span class="key-group"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span><p><strong>Move in Space</strong>Fly forward, backward, or strafe along module racks.</p></div>
+    <div><span class="key-group"><kbd>Q</kbd><kbd>E</kbd></span><p><strong>Ascend & Descend</strong>Maintain line of sight while adjusting elevation.</p></div>
+    <div><span data-icon="cursor"></span><p><strong>Inspect Hardware & Experiments</strong>Click any equipment piece or choose from the inventory.</p></div>
+  </div>
+  <p class="help-note"><kbd>Esc</kbd> Close panels <span>·</span> <kbd>R</kbd> Reset camera view <span>·</span> <kbd>P</kbd> Launch Pitch Mode</p>
+ </dialog>
+
+ <dialog id="info-dialog">
+  <form method="dialog"><button class="icon-button modal-close" aria-label="Close info"><span data-icon="close"></span></button></form>
+  <div class="eyebrow">NASA 3D RECONSTRUCTION</div>
+  <h2>Real Spacecraft Interior.<br>Authentic Fire Telemetry.</h2>
+  <p>This experience renders NASA's published 3D mesh of the Destiny US Laboratory, integrated with real calibrated telemetry from the Saffire, SAME-R, BASS, and FLEX flight programs.</p>
+  <div class="source-stats">
+    <span><strong>66</strong>Identifiable Parts</span>
+    <span><strong>4</strong>Combustion Missions</span>
+    <span><strong>3D</strong>Real-Time Flight Physics</span>
+  </div>
+  <p class="muted">Visual geometry reflects internal layout and is not a real-time engineering inventory. Mesh labels are based on official JSC archive manifests.</p>
+  <a href="https://science.nasa.gov/3d-resources/international-space-station-iss-e-internal/" target="_blank" rel="noopener noreferrer" class="source-link">NASA 3D Archive Source <span data-icon="external"></span></a>
+  <p class="credits">Model: NASA / Johnson Space Center / IGOAL.<br>Data: NASA Physical Sciences Informatics (PSI). Independent project for NASA Space Apps Challenge.</p>
+ </dialog>
+
+ <!-- 3D Combustion & Telemetry HUD Controls -->
+ <div id="fire-context" class="fire-context" hidden>
+   <span class="live-dot"></span>
+   <div>
+     <strong id="context-title">3D Combustion Sim</strong>
+     <span id="context-caption">Sample Tray · NASA Telemetry</span>
+   </div>
+   <button id="fire-focus">Focus Camera ↗</button>
+ </div>
+
+ <aside id="fire-panel" class="fire-panel" hidden aria-label="Combustion Experiment Analysis Panel">
+  <div class="fire-panel-heading">
+    <div>
+      <span class="eyebrow">COMBUSTION ANALYSIS</span>
+      <h2 id="record-title">Saffire-I</h2>
+    </div>
+    <button id="fire-close" class="icon-button" aria-label="Close experiment panel">×</button>
+  </div>
+
+  <label class="field-label" for="experiment-select">Active Combustion Experiment</label>
+  <select id="experiment-select" aria-label="Active Experiment"></select>
+
+  <div class="record-tabs" role="tablist" aria-label="Experiment Details">
+    <button id="tab-data" role="tab" aria-selected="true" aria-controls="record-data">Telemetry</button>
+    <button id="tab-conditions" role="tab" aria-selected="false" aria-controls="record-conditions">Conditions</button>
+    <button id="tab-source" role="tab" aria-selected="false" aria-controls="record-source">Provenance</button>
+  </div>
+
+  <p id="fire-loading" role="status">Loading experiment data…</p>
+
+  <div id="record-data" role="tabpanel" aria-labelledby="tab-data">
+    <div id="fire-content" hidden>
+      <p class="fire-intro" id="record-intro"></p>
+      <div id="fire-charts"></div>
+      <dl class="control-readings" id="control-readings"></dl>
+      <p id="fire-sample" class="sample-note"></p>
+    </div>
+    <div id="record-metadata" hidden></div>
+  </div>
+
+  <div id="record-conditions" role="tabpanel" aria-labelledby="tab-conditions" hidden>
+    <dl id="condition-list" class="condition-list"></dl>
+    <div class="placement">
+      <label class="field-label" for="placement-select">Sample Tray Location in US Lab</label>
+      <select id="placement-select">
+        <option value="center">Center · Main Science Aisle</option>
+        <option value="aft">Aft Section · Near Hatch</option>
+        <option value="forward">Forward Section · Destiny FWD</option>
+        <option value="custom" hidden>Selected Equipment Rack</option>
+      </select>
+      <p class="caption">Tray placement configures spatial rendering. Does not imply combustion occurred outside sealed flight apparatus.</p>
+    </div>
+  </div>
+
+  <div id="record-source" role="tabpanel" aria-labelledby="tab-source" hidden>
+    <div id="source-content"></div>
+    <button id="fire-download" class="secondary" hidden>Export Active Sensor Telemetry (CSV) ↓</button>
+  </div>
+ </aside>
+
+ <section id="fire-timeline" class="fire-timeline" hidden aria-label="Experiment Playback Timeline">
+  <div class="timeline-top">
+    <span id="fire-phase" role="status">Experiment Initialized</span>
+    <span id="fire-time">00:00</span>
+  </div>
+  <input id="fire-range" type="range" min="0" max="659.967" step="0.001" value="0" aria-label="Elapsed Time (Seconds)">
+  <div class="timeline-events" id="timeline-events"></div>
+  <div class="playback-controls">
+    <button id="fire-play" class="play-button">▶ Play</button>
+    <button id="fire-reset" aria-label="Reset Time">↺</button>
+    <label>Speed 
+      <select id="fire-speed" aria-label="Playback Rate">
+        <option value="1">1×</option>
+        <option value="5" selected>5×</option>
+        <option value="10">10×</option>
+      </select>
+    </label>
+    <label class="visual-check"><input id="fire-visual-toggle" type="checkbox" checked> 3D Sample Tray & Flame</label>
+  </div>
+ </section>
+
+ <noscript><div class="fatal">JavaScript is required to run this 3D aerospace simulation.</div></noscript>
+</main>
+<script type="module" src="./app.js"></script>
+</body>
+</html>

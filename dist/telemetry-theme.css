@@ -1,0 +1,398 @@
+/* ==========================================================================
+   CLEAN LIGHT NASA SCIENTIFIC THEME & AEROSPACE DESIGN TOKENS
+   NASA Editorial Research Palette: Warm Alabaster & Orbital Forest Green
+   ========================================================================== */
+
+:root {
+  /* Editorial NASA Research Palette */
+  --space-bg: #F7F6F2;
+  --space-surface: #FFFFFF;
+  --space-surface-card: #FFFFFF;
+  --space-surface-elevated: #F7F6F2;
+  --space-border: #E5E2DC;
+  --space-border-strong: #D3CECE;
+  --space-border-glow: rgba(33, 78, 60, 0.25);
+
+  /* Typography Colors */
+  --space-text-primary: #1E2421;
+  --space-text-secondary: #525B56;
+  --space-text-muted: #717B75;
+  --space-text-glow: #214E3C;
+
+  /* Telemetry Status Colors — NASA Orbital Forest Green & Warm Amber */
+  --telemetry-cyan: #214E3C;
+  --telemetry-blue: #1D4ED8;
+  --telemetry-amber: #A66E28;
+  --telemetry-emerald: #214E3C;
+  --telemetry-rose: #B91C1C;
+  --telemetry-red: #B91C1C;
+  --telemetry-purple: #6B4E71;
+
+  /* Fonts */
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+  --font-sans: 'Space Grotesk', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+
+  /* Shadows — subtle, no neon glow */
+  --glass-blur: blur(8px);
+  --space-shadow: 0 4px 16px rgba(30, 36, 33, 0.06);
+  --glow-cyan: none;
+  --glow-amber: none;
+  --glow-red: none;
+}
+
+/* Global Reset & Base */
+body.telemetry-dark {
+  background-color: var(--space-bg);
+  color: var(--space-text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Clean scrollbars */
+body.telemetry-dark ::-webkit-scrollbar,
+.telemetry-dark ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+body.telemetry-dark ::-webkit-scrollbar-track,
+.telemetry-dark ::-webkit-scrollbar-track {
+  background: #EFECE6;
+}
+body.telemetry-dark ::-webkit-scrollbar-thumb,
+.telemetry-dark ::-webkit-scrollbar-thumb {
+  background: #D3CECE;
+  border-radius: 3px;
+}
+body.telemetry-dark ::-webkit-scrollbar-thumb:hover,
+.telemetry-dark ::-webkit-scrollbar-thumb:hover {
+  background: #A8A29E;
+}
+
+/* Top Navigation Bar in Telemetry Theme */
+.telemetry-dark .topbar {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  background: rgba(247, 246, 242, 0.98) !important;
+  border-bottom: 1px solid var(--space-border) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  height: 64px !important;
+  padding: 0 24px !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 100 !important;
+  gap: 12px !important;
+}
+
+.telemetry-dark .brand {
+  color: var(--space-text-primary);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.telemetry-dark .brand svg {
+  stroke: var(--telemetry-cyan);
+  filter: none;
+}
+
+.telemetry-dark .brand-sub {
+  color: var(--telemetry-cyan);
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 2.5px;
+}
+
+.telemetry-dark .mode-nav {
+  position: static !important;
+  transform: none !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  background: #EFECE6 !important;
+  padding: 4px 6px !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--space-border) !important;
+  box-shadow: none !important;
+  height: auto !important;
+  flex-shrink: 1 !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+}
+
+.telemetry-dark .top-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-shrink: 0 !important;
+  position: static !important;
+  transform: none !important;
+}
+
+@media (max-width: 1400px) {
+  .telemetry-dark .topbar {
+    padding: 0 16px !important;
+    gap: 8px !important;
+  }
+  .telemetry-dark .mode-nav {
+    gap: 2px !important;
+    padding: 3px 4px !important;
+  }
+  .telemetry-dark .mode-nav button {
+    padding: 5px 10px !important;
+    font-size: 11px !important;
+  }
+}
+
+@media (max-width: 1280px) {
+  .telemetry-dark .topbar {
+    padding: 0 12px !important;
+    gap: 6px !important;
+  }
+  .telemetry-dark .brand span {
+    font-size: 12px !important;
+    letter-spacing: 1.5px !important;
+  }
+  .telemetry-dark .brand svg {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .telemetry-dark .brand-sub {
+    font-size: 7px !important;
+    letter-spacing: 1.5px !important;
+  }
+  .telemetry-dark .mode-nav {
+    gap: 2px !important;
+    padding: 2px 4px !important;
+  }
+  .telemetry-dark .mode-nav button {
+    padding: 5px 8px !important;
+    font-size: 10.5px !important;
+    letter-spacing: 0.2px !important;
+    white-space: nowrap !important;
+  }
+  .pitch-mode-btn {
+    padding: 5px 8px !important;
+    font-size: 10px !important;
+    letter-spacing: 0.4px !important;
+  }
+  .top-actions {
+    gap: 6px !important;
+  }
+  .icon-button {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+
+/* Ensure #research-dialog always covers viewport and cannot be squished by style.css dialog { width: 470px; } */
+#research-dialog.research-workspace,
+dialog#research-dialog {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  height: 100vh !important;
+  max-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-sizing: border-box !important;
+  z-index: 9999 !important;
+}
+
+/* Ensure #active-module-view covers screen cleanly and is scrollable */
+#active-module-view {
+  position: fixed !important;
+  top: 64px !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  background: var(--space-bg) !important;
+  z-index: 40 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#active-module-view[hidden] {
+  display: none !important;
+}
+
+/* Prevent 3D Welcome screen or canvas bleed-through when 2D module is active */
+body.module-active #welcome,
+body.module-active #explore-hint {
+  display: none !important;
+}
+
+.telemetry-dark .mode-nav button {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--space-text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 6px 14px;
+  height: auto;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.telemetry-dark .mode-nav button:hover {
+  color: var(--space-text-primary);
+  background: rgba(33, 78, 60, 0.08);
+}
+
+.telemetry-dark .mode-nav button[aria-pressed="true"],
+.telemetry-dark .mode-nav button.active {
+  color: #214E3C;
+  background: #FFFFFF;
+  border-color: var(--space-border);
+  box-shadow: 0 1px 3px rgba(30, 36, 33, 0.08);
+  font-weight: 600;
+}
+
+/* Pitch Mode Toggle Button */
+.pitch-mode-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #EFECE6;
+  border: 1px solid var(--space-border);
+  color: var(--telemetry-amber);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.8px;
+}
+
+.pitch-mode-btn:hover {
+  background: #FFFFFF;
+  border-color: var(--telemetry-amber);
+  box-shadow: 0 2px 6px rgba(166, 110, 40, 0.15);
+  transform: translateY(-1px);
+}
+
+.pitch-mode-btn .pulse-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--telemetry-amber);
+  border-radius: 50%;
+  box-shadow: 0 0 4px var(--telemetry-amber);
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+/* Telemetry Badges & Monospace Tags */
+.telemetry-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.telemetry-badge.badge-psi {
+  background: #EAF2EE;
+  color: #214E3C;
+  border: 1px solid rgba(33, 78, 60, 0.25);
+}
+
+.telemetry-badge.badge-ntrs {
+  background: #F4EEF5;
+  color: #6B4E71;
+  border: 1px solid rgba(107, 78, 113, 0.25);
+}
+
+.telemetry-badge.badge-gap {
+  background: #FDF2F2;
+  color: #B91C1C;
+  border: 1px solid rgba(185, 28, 28, 0.25);
+  animation: badge-warn 2.5s infinite;
+}
+
+.telemetry-badge.badge-match {
+  background: #EAF2EE;
+  color: #214E3C;
+  border: 1px solid rgba(33, 78, 60, 0.25);
+}
+
+@keyframes badge-warn {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.5; }
+}
+
+/* Clean Panels */
+.telemetry-panel {
+  background: var(--space-surface);
+  border: 1px solid var(--space-border);
+  border-radius: 12px;
+  box-shadow: var(--space-shadow);
+}
+
+/* Monospace Numbers */
+.telemetry-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.5px;
+}
+
+/* High-Contrast Citations */
+.citation-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--telemetry-cyan);
+  text-decoration: none;
+  background: #EAF2EE;
+  border: 1px solid rgba(33, 78, 60, 0.25);
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.citation-link:hover {
+  background: #DBE8E1;
+  border-color: var(--telemetry-cyan);
+  color: var(--telemetry-cyan);
+  box-shadow: 0 1px 4px rgba(33, 78, 60, 0.15);
+}
+
+/* Fullscreen View Container */
+.module-container {
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
